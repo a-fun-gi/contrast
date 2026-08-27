@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://dcfub1tbypo17"]
+
+[ext_resource type="PackedScene" uid="uid://b421st8117udf" path="res://scenes/player_2.tscn" id="1_o5qli"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_21exc"]
+distance = -272.0
+
+[node name="main" type="Node2D" unique_id=1593916627]
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1061291093]
+offset_left = -301.0
+offset_top = 272.0
+offset_right = -261.0
+offset_bottom = 312.0
+scale = Vector2(16.66247, 3.867957)
+
+[node name="player" parent="." unique_id=1473186542 instance=ExtResource("1_o5qli")]
+scale = Vector2(0.7, 0.7)
+
+[node name="Camera2D" type="Camera2D" parent="player" unique_id=969756227]
+position = Vector2(1, -1)
+zoom = Vector2(0.5, 0.5)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1433380291]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1928343321]
+shape = SubResource("WorldBoundaryShape2D_21exc")
