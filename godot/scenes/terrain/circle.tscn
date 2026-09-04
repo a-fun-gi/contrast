@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://tq0qcg1kgyak"]
+
+[ext_resource type="Texture2D" uid="uid://dqhf6qw15neb" path="res://assets/terrain_w.png" id="1_rsw0a"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_21exc"]
+radius = 146.3284
+
+[node name="StaticBody2D" type="StaticBody2D" unique_id=1624918828]
+
+[node name="TerrainW" type="Sprite2D" parent="." unique_id=2043044042]
+position = Vector2(-1, 0)
+texture = ExtResource("1_rsw0a")
+region_enabled = true
+region_rect = Rect2(471.8075, 1391.9738, 383.63452, 366.9547)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1809387084]
+shape = SubResource("CircleShape2D_21exc")

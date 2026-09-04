@@ -976,7 +976,6 @@ _data = {
 script = ExtResource("1_s551d")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=440897819]
-visible = false
 position = Vector2(-3, -213)
 shape = SubResource("CapsuleShape2D_21exc")
 
@@ -993,7 +992,7 @@ position = Vector2(-78, -297)
 [node name="torso" type="Bone2D" parent="visuals/main body" unique_id=1184298761]
 position = Vector2(72, 64)
 rotation = 1.5771601
-scale = Vector2(0.9999999, 0.9999999)
+scale = Vector2(0.99999976, 0.99999976)
 rest = Transform2D(-0.0063636936, 0.99997973, -0.99997973, -0.0063636936, 72, 64)
 
 [node name="head" type="Bone2D" parent="visuals/main body/torso" unique_id=844424996]
@@ -1027,7 +1026,7 @@ bone_angle = 0.0
 [node name="legl2" type="Bone2D" parent="visuals/main body/torso/leg_l" unique_id=237675192]
 position = Vector2(13.999718, -0.08909554)
 rotation = 0.4638267
-scale = Vector2(0.9999995, 0.9999995)
+scale = Vector2(0.99999946, 0.99999946)
 rest = Transform2D(1, 0, 0, 1, 13.999718, -0.08909554)
 
 [node name="leg_r" type="Bone2D" parent="visuals/main body/torso" unique_id=2024531336]
@@ -1070,6 +1069,7 @@ rest = Transform2D(-0.00069157674, 0.99999976, -0.99999976, -0.00069157674, 0, 4
 [node name="torso_bottomleft" type="Bone2D" parent="visuals/torso/torso_mid/torso_bottom" unique_id=1889809270]
 position = Vector2(21.029049, 41.98547)
 rotation = 0.7962339
+scale = Vector2(0.99999994, 0.99999994)
 rest = Transform2D(0.6994034, 0.71472716, -0.71472716, 0.6994034, 21.029049, 41.98547)
 
 [node name="torso_bottomright" type="Bone2D" parent="visuals/torso/torso_mid/torso_bottom" unique_id=1798100950]
