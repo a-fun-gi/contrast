@@ -1,12 +1,15 @@
 [gd_scene format=3 uid="uid://dcfub1tbypo17"]
 
 [ext_resource type="PackedScene" uid="uid://b421st8117udf" path="res://scenes/player_2.tscn" id="1_o5qli"]
+[ext_resource type="Texture2D" uid="uid://dqhf6qw15neb" path="res://assets/terrain_w.png" id="1_tipki"]
 [ext_resource type="PackedScene" uid="uid://g2uu3ncq40g4" path="res://scenes/terrain/large_rect.tscn" id="2_0wfyh"]
 [ext_resource type="PackedScene" uid="uid://eyjarbi1ge4b" path="res://scenes/terrain/MOVABLE SQUARE.tscn" id="2_jyhfs"]
+[ext_resource type="PackedScene" uid="uid://cmvr5ma6kgera" path="res://scenes/game_manager.tscn" id="2_ya4ey"]
+[ext_resource type="PackedScene" uid="uid://c0i36cpvpqq4u" path="res://scenes/eclipse.tscn" id="3_choun"]
 [ext_resource type="PackedScene" uid="uid://bx0hv2w8ftjve" path="res://scenes/terrain/squre.tscn" id="4_tbgi4"]
 [ext_resource type="PackedScene" uid="uid://bte6c8qabhdk3" path="res://scenes/terrain/skinny_rect.tscn" id="5_tbgi4"]
 [ext_resource type="PackedScene" uid="uid://tq0qcg1kgyak" path="res://scenes/terrain/circle.tscn" id="6_tefeu"]
-[ext_resource type="Shader" uid="uid://c4fojk4rexag6" path="res://shaders/invert.tres" id="7_o6xl0"]
+[ext_resource type="Shader" uid="uid://bvx4c7snj8hk" path="res://shaders/invert.gdshader" id="8_tipki"]
 
 [sub_resource type="Animation" id="Animation_jyhfs"]
 resource_name = "MOVE"
@@ -46,10 +49,28 @@ _data = {
 &"RESET": SubResource("Animation_tbgi4")
 }
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_altnn"]
-shader = ExtResource("7_o6xl0")
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_tipki"]
+shader = ExtResource("8_tipki")
 
 [node name="main" type="Node2D" unique_id=1593916627]
+
+[node name="GameManager" parent="." unique_id=2068318680 instance=ExtResource("2_ya4ey")]
+unique_name_in_owner = true
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1738743405]
+position = Vector2(2.999878, 3.0000076)
+scale = Vector2(17.099014, 46.80387)
+texture = ExtResource("1_tipki")
+region_enabled = true
+region_rect = Rect2(401.0051, 351.10455, 945.8091, 295.74884)
+
+[node name="Parallax2D" type="Parallax2D" parent="." unique_id=711210797]
+scroll_scale = Vector2(0, 0)
+
+[node name="eclipse" parent="Parallax2D" unique_id=1859557419 instance=ExtResource("3_choun")]
+position = Vector2(-183, -103.00003)
+rotation = -3.1415925
+scale = Vector2(1.5, 1.5)
 
 [node name="player" parent="." unique_id=1473186542 instance=ExtResource("1_o5qli")]
 scale = Vector2(0.7, 0.7)
@@ -60,42 +81,53 @@ zoom = Vector2(0.5, 0.5)
 position_smoothing_enabled = true
 position_smoothing_speed = 15.0
 
-[node name="StaticBody2D" parent="." unique_id=1598109844 instance=ExtResource("2_0wfyh")]
+[node name="terrain" type="Node2D" parent="." unique_id=906218129]
+
+[node name="StaticBody2D" parent="terrain" unique_id=1598109844 instance=ExtResource("2_0wfyh")]
 position = Vector2(-19, 251)
 
-[node name="StaticBody2D2" parent="." unique_id=4028278 instance=ExtResource("4_tbgi4")]
+[node name="StaticBody2D2" parent="terrain" unique_id=4028278 instance=ExtResource("4_tbgi4")]
 position = Vector2(707, 119)
 
-[node name="StaticBody2D3" parent="." unique_id=2094124161 instance=ExtResource("4_tbgi4")]
+[node name="StaticBody2D3" parent="terrain" unique_id=2094124161 instance=ExtResource("4_tbgi4")]
 position = Vector2(1002, 56)
 
-[node name="AnimatableBody2D" parent="." unique_id=2084512860 instance=ExtResource("2_jyhfs")]
+[node name="AnimatableBody2D" parent="terrain" unique_id=2084512860 instance=ExtResource("2_jyhfs")]
 position = Vector2(1416, -150.99994)
 scale = Vector2(1.05, 1.05)
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="AnimatableBody2D" unique_id=1784594376]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="terrain/AnimatableBody2D" unique_id=1784594376]
 libraries/ = SubResource("AnimationLibrary_tefeu")
 autoplay = &"MOVE"
 
-[node name="StaticBody2D4" parent="." unique_id=864551730 instance=ExtResource("5_tbgi4")]
+[node name="StaticBody2D4" parent="terrain" unique_id=864551730 instance=ExtResource("5_tbgi4")]
 position = Vector2(1834, 257)
 
-[node name="StaticBody2D5" parent="." unique_id=1624918828 instance=ExtResource("6_tefeu")]
-position = Vector2(2115, 172)
+[node name="StaticBody2D5" parent="terrain" unique_id=1624918828 instance=ExtResource("6_tefeu")]
+position = Vector2(2310, 38)
 
-[node name="StaticBody2D6" parent="." unique_id=1310697614 instance=ExtResource("4_tbgi4")]
+[node name="StaticBody2D6" parent="terrain" unique_id=1310697614 instance=ExtResource("4_tbgi4")]
 position = Vector2(2105, 900)
 
-[node name="StaticBody2D7" parent="." unique_id=1462404530 instance=ExtResource("4_tbgi4")]
+[node name="StaticBody2D7" parent="terrain" unique_id=1462404530 instance=ExtResource("4_tbgi4")]
 position = Vector2(2287, 815)
 
-[node name="StaticBody2D8" parent="." unique_id=454439681 instance=ExtResource("4_tbgi4")]
+[node name="StaticBody2D8" parent="terrain" unique_id=454439681 instance=ExtResource("4_tbgi4")]
 position = Vector2(2444, 664)
 
-[node name="ColorRect" type="ColorRect" parent="." unique_id=113904363]
-visible = false
-material = SubResource("ShaderMaterial_altnn")
-offset_left = -1151.0
-offset_top = -645.0
-offset_right = 1153.0
-offset_bottom = 649.0
+[node name="invert" type="ColorRect" parent="." unique_id=113904363]
+material = SubResource("ShaderMaterial_tipki")
+offset_left = 6.0
+offset_top = -553.0
+offset_right = 1074.0
+offset_bottom = 635.0
+rotation = -0.551002
+
+[node name="invert2" type="ColorRect" parent="." unique_id=1593216170]
+material = SubResource("ShaderMaterial_tipki")
+offset_left = 2198.0002
+offset_top = -56.999878
+offset_right = 3266.0002
+offset_bottom = 1131.0001
+rotation = 0.55336726
+scale = Vector2(0.9024194, 0.5986503)

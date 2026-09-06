@@ -992,7 +992,7 @@ position = Vector2(-78, -297)
 [node name="torso" type="Bone2D" parent="visuals/main body" unique_id=1184298761]
 position = Vector2(72, 64)
 rotation = 1.5771601
-scale = Vector2(0.99999976, 0.99999976)
+scale = Vector2(0.9999997, 0.9999997)
 rest = Transform2D(-0.0063636936, 0.99997973, -0.99997973, -0.0063636936, 72, 64)
 
 [node name="head" type="Bone2D" parent="visuals/main body/torso" unique_id=844424996]
@@ -1026,7 +1026,7 @@ bone_angle = 0.0
 [node name="legl2" type="Bone2D" parent="visuals/main body/torso/leg_l" unique_id=237675192]
 position = Vector2(13.999718, -0.08909554)
 rotation = 0.4638267
-scale = Vector2(0.99999946, 0.99999946)
+scale = Vector2(0.99999917, 0.99999917)
 rest = Transform2D(1, 0, 0, 1, 13.999718, -0.08909554)
 
 [node name="leg_r" type="Bone2D" parent="visuals/main body/torso" unique_id=2024531336]

@@ -1,0 +1,114 @@
+[gd_scene format=3 uid="uid://dfs6b64cfoybe"]
+
+[ext_resource type="FontFile" uid="uid://dimexahc4xkr8" path="res://assets/fonts/CoveredByYourGrace-Regular.ttf" id="1_sl1te"]
+[ext_resource type="FontFile" uid="uid://cmor3umhaqm8g" path="res://assets/fonts/AdwaitaSans-Italic.ttf" id="2_fe2o3"]
+[ext_resource type="Script" uid="uid://b01uk2eh2m5di" path="res://scenes/ui/main_menu.gd" id="2_m1kxf"]
+[ext_resource type="PackedScene" uid="uid://dcfub1tbypo17" path="res://scenes/main.tscn" id="3_x2yvf"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fe2o3"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(1, 1, 1, 0.75)
+draw_center = false
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
+expand_margin_left = 2.0
+expand_margin_top = 2.0
+expand_margin_right = 2.0
+expand_margin_bottom = 2.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1g8jr"]
+
+[sub_resource type="Theme" id="Theme_wt50x"]
+default_font = ExtResource("1_sl1te")
+default_font_size = 30
+Button/colors/font_color = Color(0, 0, 0, 1)
+Button/colors/font_hover_color = Color(0.95, 0.95, 0.95, 1)
+Button/font_sizes/font_size = 40
+Label/colors/font_color = Color(0, 0, 0, 1)
+Label/colors/font_outline_color = Color(0, 0, 0, 1)
+Label/colors/font_shadow_color = Color(0, 0, 0, 0)
+Label/constants/line_spacing = 3
+Label/constants/outline_size = 0
+Label/constants/shadow_offset_x = 1
+Label/constants/shadow_offset_y = 1
+Label/constants/shadow_outline_size = 1
+Label/styles/focus = SubResource("StyleBoxFlat_fe2o3")
+Label/styles/normal = SubResource("StyleBoxEmpty_1g8jr")
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_l2tq2"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_21exc"]
+font = ExtResource("2_fe2o3")
+font_size = 100
+font_color = Color(0, 0, 0, 1)
+
+[node name="main menu" type="Control" unique_id=84747217]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_wt50x")
+script = ExtResource("2_m1kxf")
+main = ExtResource("3_x2yvf")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=750149936]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("CanvasTexture_l2tq2")
+
+[node name="CenterContainer" type="CenterContainer" parent="." unique_id=1683615439]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer" unique_id=628543334]
+layout_mode = 2
+
+[node name="Button" type="Button" parent="CenterContainer/VBoxContainer" unique_id=340910094]
+layout_mode = 2
+text = "Play"
+flat = true
+
+[node name="Button3" type="Button" parent="CenterContainer/VBoxContainer" unique_id=793996444]
+layout_mode = 2
+text = "Options"
+flat = true
+
+[node name="Button2" type="Button" parent="CenterContainer/VBoxContainer" unique_id=1243353065]
+layout_mode = 2
+text = "Quit"
+flat = true
+
+[node name="CenterContainer2" type="CenterContainer" parent="." unique_id=238428243]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 42.0
+grow_horizontal = 2
+
+[node name="Label" type="Label" parent="CenterContainer2" unique_id=1596055463]
+layout_mode = 2
+text = "c o n t r a s t"
+label_settings = SubResource("LabelSettings_21exc")
+horizontal_alignment = 1
+
+[connection signal="pressed" from="CenterContainer/VBoxContainer/Button" to="." method="_on_button_pressed"]
