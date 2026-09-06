@@ -3,7 +3,6 @@
 [ext_resource type="FontFile" uid="uid://dimexahc4xkr8" path="res://assets/fonts/CoveredByYourGrace-Regular.ttf" id="1_sl1te"]
 [ext_resource type="FontFile" uid="uid://cmor3umhaqm8g" path="res://assets/fonts/AdwaitaSans-Italic.ttf" id="2_fe2o3"]
 [ext_resource type="Script" uid="uid://b01uk2eh2m5di" path="res://scenes/ui/main_menu.gd" id="2_m1kxf"]
-[ext_resource type="PackedScene" uid="uid://dcfub1tbypo17" path="res://scenes/main.tscn" id="3_x2yvf"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fe2o3"]
 content_margin_left = 4.0
@@ -61,7 +60,6 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = SubResource("Theme_wt50x")
 script = ExtResource("2_m1kxf")
-main = ExtResource("3_x2yvf")
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=750149936]
 layout_mode = 1
@@ -111,4 +109,4 @@ text = "c o n t r a s t"
 label_settings = SubResource("LabelSettings_21exc")
 horizontal_alignment = 1
 
-[connection signal="pressed" from="CenterContainer/VBoxContainer/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="CenterContainer/VBoxContainer/Button" to="." method="_on_play_button_pressed"]

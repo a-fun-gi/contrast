@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 @onready var visuals: Node2D = $visuals
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
-@onready var game_manager: Node = %GameManager
+@onready var loop_manager: Node = %LoopManager
 
 const SPEED = 300.0
 const JUMP_VELOCITY = -700.0
@@ -20,7 +20,7 @@ func _physics_process(delta: float) -> void:
 		velocity.y = JUMP_VELOCITY
 
 	if Input.is_action_just_pressed("ui_accept"):
-		game_manager.change_health(-1)
+		loop_manager.change_health(-1)
 
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.

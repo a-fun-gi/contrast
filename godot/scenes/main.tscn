@@ -1,10 +1,10 @@
 [gd_scene format=3 uid="uid://dcfub1tbypo17"]
 
+[ext_resource type="Script" uid="uid://xja4q0shbta6" path="res://scenes/maingameloopmanager.gd" id="1_choun"]
 [ext_resource type="PackedScene" uid="uid://b421st8117udf" path="res://scenes/player_2.tscn" id="1_o5qli"]
 [ext_resource type="Texture2D" uid="uid://dqhf6qw15neb" path="res://assets/terrain_w.png" id="1_tipki"]
 [ext_resource type="PackedScene" uid="uid://g2uu3ncq40g4" path="res://scenes/terrain/large_rect.tscn" id="2_0wfyh"]
 [ext_resource type="PackedScene" uid="uid://eyjarbi1ge4b" path="res://scenes/terrain/MOVABLE SQUARE.tscn" id="2_jyhfs"]
-[ext_resource type="PackedScene" uid="uid://cmvr5ma6kgera" path="res://scenes/game_manager.tscn" id="2_ya4ey"]
 [ext_resource type="PackedScene" uid="uid://c0i36cpvpqq4u" path="res://scenes/eclipse.tscn" id="3_choun"]
 [ext_resource type="PackedScene" uid="uid://bx0hv2w8ftjve" path="res://scenes/terrain/squre.tscn" id="4_tbgi4"]
 [ext_resource type="PackedScene" uid="uid://bte6c8qabhdk3" path="res://scenes/terrain/skinny_rect.tscn" id="5_tbgi4"]
@@ -54,8 +54,9 @@ shader = ExtResource("8_tipki")
 
 [node name="main" type="Node2D" unique_id=1593916627]
 
-[node name="GameManager" parent="." unique_id=2068318680 instance=ExtResource("2_ya4ey")]
+[node name="LoopManager" type="Node" parent="." unique_id=312628614]
 unique_name_in_owner = true
+script = ExtResource("1_choun")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1738743405]
 position = Vector2(2.999878, 3.0000076)

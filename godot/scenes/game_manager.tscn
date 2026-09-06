@@ -1,10 +1,3 @@
 [gd_scene format=3 uid="uid://cmvr5ma6kgera"]
 
-[ext_resource type="Script" uid="uid://b48cktgjwlif0" path="res://scenes/game_manager.gd" id="1_glms7"]
-[ext_resource type="PackedScene" uid="uid://dfs6b64cfoybe" path="res://scenes/ui/main_menu.tscn" id="2_udu3i"]
-[ext_resource type="PackedScene" uid="uid://dcfub1tbypo17" path="res://scenes/main.tscn" id="3_udu3i"]
-
-[node name="GameManager" type="Node" unique_id=2068318680]
-script = ExtResource("1_glms7")
-main_menu = ExtResource("2_udu3i")
-main = ExtResource("3_udu3i")
+[node name="GameManager" type="Node" unique_id=1840785326]

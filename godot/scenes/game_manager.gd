@@ -1,18 +1,21 @@
 extends Node
-@onready var eclipse: AnimatedSprite2D = $"../Parallax2D/eclipse"
 
-var health = 6
+var menu_i = null
 
-# Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	eclipse.frame = 6
+	var menu = load("uid://dfs6b64cfoybe")
+	if menu:
+		menu_i = menu.instantiate()
+		add_child(menu_i)
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
 
-func change_health(addend):
-	health += addend
-	eclipse.frame = health  
-	print(health)
-	return health
+func start_game():
+	menu_i.queue_free()
+	menu_i = null
+	var main = load("uid://dcfub1tbypo17")
+	if main:
+		var instance = main.instantiate()
+		add_child(instance)
+		
