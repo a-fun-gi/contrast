@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://b7lh6vex41gdc" path="res://assets/all.png" id="1_l6tho"]
 [ext_resource type="Script" uid="uid://dqk0k8m8folj1" path="res://scenes/player_2.gd" id="1_s551d"]
+[ext_resource type="Material" uid="uid://y66bh0q51qyk" path="res://shaders/character-glitch.tres" id="2_yjax8"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_21exc"]
 radius = 59.0
@@ -992,7 +993,7 @@ position = Vector2(-78, -297)
 [node name="torso" type="Bone2D" parent="visuals/main body" unique_id=1184298761]
 position = Vector2(72, 64)
 rotation = 1.5771601
-scale = Vector2(0.9999997, 0.9999997)
+scale = Vector2(0.99999964, 0.99999964)
 rest = Transform2D(-0.0063636936, 0.99997973, -0.99997973, -0.0063636936, 72, 64)
 
 [node name="head" type="Bone2D" parent="visuals/main body/torso" unique_id=844424996]
@@ -1026,7 +1027,7 @@ bone_angle = 0.0
 [node name="legl2" type="Bone2D" parent="visuals/main body/torso/leg_l" unique_id=237675192]
 position = Vector2(13.999718, -0.08909554)
 rotation = 0.4638267
-scale = Vector2(0.99999917, 0.99999917)
+scale = Vector2(0.9999991, 0.9999991)
 rest = Transform2D(1, 0, 0, 1, 13.999718, -0.08909554)
 
 [node name="leg_r" type="Bone2D" parent="visuals/main body/torso" unique_id=2024531336]
@@ -1081,6 +1082,7 @@ rest = Transform2D(0.5547079, -0.8320452, 0.8320452, 0.5547079, 18.966114, -49.0
 position = Vector2(-78, -297)
 
 [node name="leg1" type="Polygon2D" parent="visuals/polygons" unique_id=1336169555]
+material = ExtResource("2_yjax8")
 position = Vector2(-396, -223)
 texture = ExtResource("1_l6tho")
 skeleton = NodePath("../../main body")
@@ -1091,6 +1093,7 @@ bones = ["torso", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
 internal_vertex_count = 6
 
 [node name="leg2" type="Polygon2D" parent="visuals/polygons" unique_id=1060774107]
+material = ExtResource("2_yjax8")
 position = Vector2(-459, -223)
 texture = ExtResource("1_l6tho")
 skeleton = NodePath("../../main body")
@@ -1101,6 +1104,7 @@ bones = ["torso", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
 internal_vertex_count = 6
 
 [node name="head" type="Polygon2D" parent="visuals/polygons" unique_id=1235623101]
+material = ExtResource("2_yjax8")
 position = Vector2(-263, -265)
 texture = ExtResource("1_l6tho")
 skeleton = NodePath("../../main body")
@@ -1111,6 +1115,7 @@ bones = ["torso", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
 internal_vertex_count = 26
 
 [node name="torso" type="Polygon2D" parent="visuals/polygons" unique_id=1564162360]
+material = ExtResource("2_yjax8")
 position = Vector2(-694, -308)
 texture = ExtResource("1_l6tho")
 skeleton = NodePath("../../torso")

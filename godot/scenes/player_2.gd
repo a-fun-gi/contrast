@@ -3,17 +3,24 @@ extends CharacterBody2D
 @onready var visuals: Node2D = $visuals
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var loop_manager: Node = %LoopManager
+@onready var poly: Node2D = $visuals/polygons
 
 const SPEED = 300.0
 const JUMP_VELOCITY = -700.0
 
+var lastpos: Vector2
+
 func _ready() -> void:
 	print("!!! THE SCRIPT IS ALIVE !!!")
+	lastpos = global_position
+	# glitch_toggle(true)
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
 	if not is_on_floor():
 		velocity += get_gravity() * delta
+	if is_on_floor():
+		lastpos = global_position
 
 	# Handle jump.
 	if Input.is_action_just_pressed("player_jump") and is_on_floor():
@@ -43,3 +50,13 @@ func _physics_process(delta: float) -> void:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 
 	move_and_slide()
+
+func reset():
+	global_position = lastpos
+	velocity = Vector2.ZERO
+
+func glitch_toggle(toggle: bool):
+	for part in poly.get_children():
+		if part is Polygon2D:
+			part.set_instance_shader_parameter("enable_shader", toggle)
+	print("toggled")

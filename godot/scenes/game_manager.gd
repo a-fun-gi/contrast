@@ -19,3 +19,6 @@ func start_game():
 		var instance = main.instantiate()
 		add_child(instance)
 		
+
+func quit():
+	get_tree().quit()

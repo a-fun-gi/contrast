@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://dwhadwu4etnhw"]
+
+[ext_resource type="Script" uid="uid://bsll73usj6m4o" path="res://scenes/dropzone.gd" id="1_b56ip"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_21exc"]
+
+[node name="dropzone" type="Area2D" unique_id=1037339053]
+script = ExtResource("1_b56ip")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1526924224]
+shape = SubResource("WorldBoundaryShape2D_21exc")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

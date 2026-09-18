@@ -3,6 +3,7 @@
 [ext_resource type="FontFile" uid="uid://dimexahc4xkr8" path="res://assets/fonts/CoveredByYourGrace-Regular.ttf" id="1_sl1te"]
 [ext_resource type="FontFile" uid="uid://cmor3umhaqm8g" path="res://assets/fonts/AdwaitaSans-Italic.ttf" id="2_fe2o3"]
 [ext_resource type="Script" uid="uid://b01uk2eh2m5di" path="res://scenes/ui/main_menu.gd" id="2_m1kxf"]
+[ext_resource type="Shader" uid="uid://bvx4c7snj8hk" path="res://shaders/invert.gdshader" id="4_m1kxf"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fe2o3"]
 content_margin_left = 4.0
@@ -31,7 +32,8 @@ expand_margin_bottom = 2.0
 default_font = ExtResource("1_sl1te")
 default_font_size = 30
 Button/colors/font_color = Color(0, 0, 0, 1)
-Button/colors/font_hover_color = Color(0.95, 0.95, 0.95, 1)
+Button/colors/font_hover_color = Color(0.5971761, 0.59717613, 0.597176, 1)
+Button/constants/outline_size = 2
 Button/font_sizes/font_size = 40
 Label/colors/font_color = Color(0, 0, 0, 1)
 Label/colors/font_outline_color = Color(0, 0, 0, 1)
@@ -50,6 +52,9 @@ Label/styles/normal = SubResource("StyleBoxEmpty_1g8jr")
 font = ExtResource("2_fe2o3")
 font_size = 100
 font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_21exc"]
+shader = ExtResource("4_m1kxf")
 
 [node name="main menu" type="Control" unique_id=84747217]
 layout_mode = 3
@@ -109,4 +114,16 @@ text = "c o n t r a s t"
 label_settings = SubResource("LabelSettings_21exc")
 horizontal_alignment = 1
 
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1253945338]
+material = SubResource("ShaderMaterial_21exc")
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_right = 0.0010986328
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.9999981, 1)
+
 [connection signal="pressed" from="CenterContainer/VBoxContainer/Button" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="CenterContainer/VBoxContainer/Button2" to="." method="_on_quit_button_pressed"]

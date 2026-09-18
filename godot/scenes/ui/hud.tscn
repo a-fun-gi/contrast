@@ -1,9 +1,29 @@
 [gd_scene format=3 uid="uid://cpetr1sg3cm8c"]
 
-[node name="hud" type="Control" unique_id=1989947844]
+[ext_resource type="Script" uid="uid://dr8kwux5afl5o" path="res://scenes/ui/life_counter.gd" id="1_0mwgc"]
+[ext_resource type="Texture2D" uid="uid://ds2spmox8cu86" path="res://assets/6.png" id="2_h022r"]
+[ext_resource type="Texture2D" uid="uid://ta7ek0oik81f" path="res://assets/5.png" id="3_4jqwt"]
+[ext_resource type="Texture2D" uid="uid://d1hyjhiavqyb8" path="res://assets/4.png" id="4_kicr4"]
+[ext_resource type="Texture2D" uid="uid://cskk0lkbvfwcc" path="res://assets/3.png" id="5_mj13f"]
+[ext_resource type="Texture2D" uid="uid://bfmg4q1vogyi5" path="res://assets/2.png" id="6_0h1do"]
+[ext_resource type="Texture2D" uid="uid://dffsbyrklbyjr" path="res://assets/1.png" id="7_4d46k"]
+[ext_resource type="Texture2D" uid="uid://nf2vjtsa2tjc" path="res://assets/0.png" id="8_erw67"]
+
+[node name="CanvasLayer" type="CanvasLayer" unique_id=149057146]
+script = ExtResource("1_0mwgc")
+life_textures = Array[Texture2D]([ExtResource("2_h022r"), ExtResource("3_4jqwt"), ExtResource("4_kicr4"), ExtResource("5_mj13f"), ExtResource("6_0h1do"), ExtResource("7_4d46k"), ExtResource("8_erw67")])
+
+[node name="hud" type="Control" parent="." unique_id=1989947844]
 layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+anchors_preset = 0
+
+[node name="AspectRatioContainer" type="AspectRatioContainer" parent="hud" unique_id=1513273111]
+layout_mode = 1
+offset_left = 10.0
+offset_top = 12.0
+offset_right = 10.0
+offset_bottom = 12.0
+
+[node name="TextureRect" type="TextureRect" parent="hud/AspectRatioContainer" unique_id=813157250]
+layout_mode = 2
+flip_v = true
