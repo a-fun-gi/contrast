@@ -10,9 +10,10 @@
 [ext_resource type="PackedScene" uid="uid://bx0hv2w8ftjve" path="res://scenes/terrain/squre.tscn" id="4_tbgi4"]
 [ext_resource type="PackedScene" uid="uid://bte6c8qabhdk3" path="res://scenes/terrain/skinny_rect.tscn" id="5_tbgi4"]
 [ext_resource type="PackedScene" uid="uid://tq0qcg1kgyak" path="res://scenes/terrain/circle.tscn" id="6_tefeu"]
-[ext_resource type="Shader" uid="uid://bvx4c7snj8hk" path="res://shaders/invert.gdshader" id="8_tipki"]
 [ext_resource type="PackedScene" uid="uid://dwhadwu4etnhw" path="res://scenes/dropzone.tscn" id="10_eb6dy"]
 [ext_resource type="PackedScene" uid="uid://bew2xjf7mefcu" path="res://scenes/mmovingsquareblack.tscn" id="11_trceg"]
+[ext_resource type="PackedScene" uid="uid://bj7rqb8uwiwmo" path="res://scenes/terrain/invert.tscn" id="13_trceg"]
+[ext_resource type="PackedScene" uid="uid://3omylfemrbt7" path="res://scenes/terrain/ripple-zone.tscn" id="14_a8y0u"]
 
 [sub_resource type="Animation" id="Animation_eb6dy"]
 length = 0.001
@@ -210,9 +211,6 @@ _data = {
 &"move": SubResource("Animation_jkv2x")
 }
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_tipki"]
-shader = ExtResource("8_tipki")
-
 [node name="main" type="Node2D" unique_id=1593916627]
 
 [node name="LoopManager" type="Node" parent="." unique_id=312628614]
@@ -307,19 +305,16 @@ autoplay = &"move"
 
 [node name="CanvasLayer" parent="." unique_id=149057146 instance=ExtResource("2_ya4ey")]
 
-[node name="invert" type="ColorRect" parent="." unique_id=113904363]
-material = SubResource("ShaderMaterial_tipki")
-offset_left = 6.0
-offset_top = -553.0
-offset_right = 1074.0
-offset_bottom = 635.0
-rotation = -0.551002
+[node name="invert" parent="." unique_id=67366047 instance=ExtResource("13_trceg")]
+position = Vector2(52.00003, -519)
+rotation = -0.6795186
+scale = Vector2(12.839999, 11.403782)
 
-[node name="invert2" type="ColorRect" parent="." unique_id=1593216170]
-material = SubResource("ShaderMaterial_tipki")
-offset_left = 2198.0002
-offset_top = -56.999878
-offset_right = 3266.0002
-offset_bottom = 1131.0001
-rotation = 0.55336726
-scale = Vector2(0.9024194, 0.5986503)
+[node name="invert2" parent="." unique_id=645028264 instance=ExtResource("13_trceg")]
+position = Vector2(2091.0002, -153.99997)
+rotation = -0.27187514
+scale = Vector2(9.901639, 9.21225)
+
+[node name="Area2D" parent="." unique_id=1118354579 instance=ExtResource("14_a8y0u")]
+position = Vector2(4348, 602)
+scale = Vector2(5.9199977, 5)

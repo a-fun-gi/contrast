@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://3omylfemrbt7"]
+
+[ext_resource type="Shader" uid="uid://xoyahlndr113" path="res://shaders/ripple.gdshader" id="1_3pwnd"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_21exc"]
+radius = 172.01163
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_21exc"]
+shader = ExtResource("1_3pwnd")
+shader_parameter/wave_count = 20.0
+shader_parameter/speed = 3.0
+shader_parameter/height = 0.003
+
+[node name="Area2D" type="Area2D" unique_id=1118354579]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1261220533]
+visible = false
+shape = SubResource("CircleShape2D_21exc")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=617613047]
+material = SubResource("ShaderMaterial_21exc")
+offset_left = -132.0
+offset_top = -149.0
+offset_right = 135.0
+offset_bottom = 145.0

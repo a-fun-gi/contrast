@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://bj7rqb8uwiwmo"]
+
+[ext_resource type="Script" uid="uid://b7tp5dgksmaqx" path="res://scenes/terrain/invert-area.gd" id="1_3q0i4"]
+[ext_resource type="Shader" uid="uid://bvx4c7snj8hk" path="res://shaders/invert.gdshader" id="1_q0jps"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_3q0i4"]
+shader = ExtResource("1_q0jps")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_21exc"]
+size = Vector2(102, 99)
+
+[node name="invert" type="Area2D" unique_id=67366047]
+script = ExtResource("1_3q0i4")
+
+[node name="invert" type="ColorRect" parent="." unique_id=1999493857]
+material = SubResource("ShaderMaterial_3q0i4")
+offset_right = 100.0
+offset_bottom = 100.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=271263140]
+visible = false
+position = Vector2(50, 50.5)
+shape = SubResource("RectangleShape2D_21exc")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]
