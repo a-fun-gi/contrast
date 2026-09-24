@@ -1,0 +1,61 @@
+[gd_scene format=3 uid="uid://boyi8bjdvqu1j"]
+
+[ext_resource type="Texture2D" uid="uid://bkkbfgx450vy2" path="res://assets/particle.png" id="1_7lwq2"]
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_21exc"]
+particle_flag_disable_z = true
+emission_shape_scale = Vector3(0, 0, 0)
+emission_shape = 6
+emission_ring_axis = Vector3(0, 0, 1)
+emission_ring_height = 1.0
+emission_ring_radius = 10.0
+emission_ring_inner_radius = 0.0
+emission_ring_cone_angle = 90.0
+angle_min = -9.9999895
+angle_max = 10.0000105
+initial_velocity_min = 1.0
+initial_velocity_max = 4.0
+angular_velocity_min = -10.000016
+angular_velocity_max = 9.999984
+gravity = Vector3(0, -98, 0)
+scale_min = 0.19999999
+scale_max = 0.7
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_a7mvf"]
+particle_flag_disable_z = true
+emission_shape_scale = Vector3(1, 1, 0)
+emission_shape = 6
+emission_ring_axis = Vector3(0, 0, 0)
+emission_ring_height = 1.0
+emission_ring_radius = 1.0
+emission_ring_inner_radius = 0.0
+emission_ring_cone_angle = 90.0
+angle_min = -9.9999895
+angle_max = 10.0000105
+initial_velocity_min = 1.0
+initial_velocity_max = 4.0
+angular_velocity_min = -10.000016
+angular_velocity_max = 9.999984
+gravity = Vector3(0, 98, 0)
+scale_min = 0.19999999
+scale_max = 0.7
+
+[node name="walls" type="Node2D" unique_id=374492164]
+scale = Vector2(0.99999994, 0.99999994)
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="." unique_id=1487848240]
+scale = Vector2(0.6666667, 1.3333334)
+amount = 120
+texture = ExtResource("1_7lwq2")
+lifetime = 3.0
+trail_lifetime = 0.79
+process_material = SubResource("ParticleProcessMaterial_21exc")
+
+[node name="GPUParticles2D2" type="GPUParticles2D" parent="." unique_id=387757668]
+position = Vector2(0, 3.0517578e-05)
+scale = Vector2(0.6666667, 1.3333334)
+amount = 120
+texture = ExtResource("1_7lwq2")
+lifetime = 3.0
+trail_lifetime = 0.79
+process_material = SubResource("ParticleProcessMaterial_a7mvf")

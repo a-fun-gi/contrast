@@ -1,9 +1,10 @@
 [gd_scene format=3 uid="uid://3omylfemrbt7"]
 
 [ext_resource type="Shader" uid="uid://xoyahlndr113" path="res://shaders/ripple.gdshader" id="1_3pwnd"]
+[ext_resource type="Script" uid="uid://bmac84tegwh77" path="res://scenes/terrain/unstable-area.gd" id="1_y181v"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_21exc"]
-radius = 172.01163
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wuoj1"]
+size = Vector2(905, 882)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_21exc"]
 shader = ExtResource("1_3pwnd")
@@ -11,15 +12,16 @@ shader_parameter/wave_count = 20.0
 shader_parameter/speed = 3.0
 shader_parameter/height = 0.003
 
-[node name="Area2D" type="Area2D" unique_id=1118354579]
+[node name="ripple" type="Area2D" unique_id=1118354579]
+script = ExtResource("1_y181v")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1261220533]
-visible = false
-shape = SubResource("CircleShape2D_21exc")
+position = Vector2(296.5, -20)
+shape = SubResource("RectangleShape2D_wuoj1")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=617613047]
 material = SubResource("ShaderMaterial_21exc")
-offset_left = -132.0
-offset_top = -149.0
-offset_right = 135.0
-offset_bottom = 145.0
+offset_left = -162.0
+offset_top = -459.0
+offset_right = 743.0
+offset_bottom = 415.0
