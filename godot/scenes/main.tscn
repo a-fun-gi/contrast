@@ -14,6 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://bew2xjf7mefcu" path="res://scenes/mmovingsquareblack.tscn" id="11_trceg"]
 [ext_resource type="PackedScene" uid="uid://bj7rqb8uwiwmo" path="res://scenes/terrain/invert.tscn" id="13_trceg"]
 [ext_resource type="PackedScene" uid="uid://3omylfemrbt7" path="res://scenes/terrain/ripple-zone.tscn" id="14_a8y0u"]
+[ext_resource type="PackedScene" uid="uid://boyi8bjdvqu1j" path="res://scenes/terrain/walls.tscn" id="15_jkv2x"]
 
 [sub_resource type="Animation" id="Animation_eb6dy"]
 length = 0.001
@@ -127,6 +128,42 @@ tracks/5/keys = {
 "update": 1,
 "values": [true]
 }
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("AnimatableBody2D4:collision_layer")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("AnimatableBody2D5:collision_layer")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("AnimatableBody2D6:collision_layer")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
 
 [sub_resource type="Animation" id="Animation_jkv2x"]
 resource_name = "move"
@@ -204,12 +241,86 @@ tracks/5/keys = {
 "update": 1,
 "values": [true, false, true]
 }
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("AnimatableBody2D4:collision_layer")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 1.6000001, 2.966667),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [1, 8388608, 1]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("AnimatableBody2D5:collision_layer")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0, 3.266667, 4.3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [1, 8388608, 1]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("AnimatableBody2D6:collision_layer")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0, 1.6000001, 2.966667),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [1, 8388608, 1]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_jbj1t"]
 _data = {
 &"RESET": SubResource("Animation_a8y0u"),
 &"move": SubResource("Animation_jkv2x")
 }
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_jbj1t"]
+particle_flag_disable_z = true
+emission_shape_scale = Vector3(0, 0, 0)
+emission_shape = 6
+emission_ring_axis = Vector3(0, 0, 1)
+emission_ring_height = 1.0
+emission_ring_radius = 10.0
+emission_ring_inner_radius = 0.0
+emission_ring_cone_angle = 90.0
+angle_min = -9.9999895
+angle_max = 10.0000105
+initial_velocity_min = 1.0
+initial_velocity_max = 4.0
+angular_velocity_min = -10.000016
+angular_velocity_max = 9.999984
+gravity = Vector3(0, -98, 0)
+scale_min = 0.19999999
+scale_max = 0.7
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_muem4"]
+particle_flag_disable_z = true
+emission_shape_scale = Vector3(1, 1, 0)
+emission_shape = 6
+emission_ring_axis = Vector3(0, 0, 0)
+emission_ring_height = 1.0
+emission_ring_radius = 1.0
+emission_ring_inner_radius = 0.0
+emission_ring_cone_angle = 90.0
+angle_min = -9.9999895
+angle_max = 10.0000105
+initial_velocity_min = 1.0
+initial_velocity_max = 4.0
+angular_velocity_min = -10.000016
+angular_velocity_max = 9.999984
+gravity = Vector3(0, 98, 0)
+scale_min = 0.19999999
+scale_max = 0.7
 
 [node name="main" type="Node2D" unique_id=1593916627]
 
@@ -303,18 +414,43 @@ position = Vector2(5144, 894)
 libraries/ = SubResource("AnimationLibrary_jbj1t")
 autoplay = &"move"
 
-[node name="CanvasLayer" parent="." unique_id=149057146 instance=ExtResource("2_ya4ey")]
+[node name="hud" parent="." unique_id=149057146 instance=ExtResource("2_ya4ey")]
 
-[node name="invert" parent="." unique_id=67366047 instance=ExtResource("13_trceg")]
+[node name="walls" parent="." unique_id=374492164 instance=ExtResource("15_jkv2x")]
+position = Vector2(1555.0001, 222)
+scale = Vector2(13.319995, 5.64)
+
+[node name="GPUParticles2D" parent="walls" index="0" unique_id=1487848240]
+lifetime = 3.87
+process_material = SubResource("ParticleProcessMaterial_jbj1t")
+
+[node name="GPUParticles2D2" parent="walls" index="1" unique_id=387757668]
+lifetime = 3.68
+process_material = SubResource("ParticleProcessMaterial_muem4")
+
+[node name="inverters" type="Node2D" parent="." unique_id=1784691390]
+
+[node name="invert" parent="inverters" unique_id=67366047 instance=ExtResource("13_trceg")]
 position = Vector2(52.00003, -519)
 rotation = -0.6795186
 scale = Vector2(12.839999, 11.403782)
 
-[node name="invert2" parent="." unique_id=645028264 instance=ExtResource("13_trceg")]
+[node name="invert2" parent="inverters" unique_id=645028264 instance=ExtResource("13_trceg")]
 position = Vector2(2091.0002, -153.99997)
-rotation = -0.27187514
-scale = Vector2(9.901639, 9.21225)
+rotation = -0.2718751
+scale = Vector2(9.901638, 9.212249)
 
-[node name="Area2D" parent="." unique_id=1118354579 instance=ExtResource("14_a8y0u")]
-position = Vector2(4348, 602)
-scale = Vector2(5.9199977, 5)
+[node name="BackBufferCopy" type="BackBufferCopy" parent="." unique_id=1361667594]
+position = Vector2(2569, 227)
+rotation = -0.2718751
+scale = Vector2(9.90164, 9.21225)
+copy_mode = 2
+
+[node name="ripple" parent="." unique_id=1118354579 instance=ExtResource("14_a8y0u")]
+position = Vector2(2198, 255.99998)
+scale = Vector2(3.8399982, 3.04)
+
+[connection signal="body_entered" from="ripple" to="player" method="_on_ripple_body_entered"]
+[connection signal="body_exited" from="ripple" to="player" method="_on_ripple_body_exited"]
+
+[editable path="walls"]
