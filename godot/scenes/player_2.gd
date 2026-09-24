@@ -4,6 +4,8 @@ extends CharacterBody2D
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var loop_manager: Node = %LoopManager
 @onready var poly: Node2D = $visuals/polygons
+@export var inverted: bool = false
+@export var unstable: bool = false
 
 const SPEED = 300.0
 const JUMP_VELOCITY = -700.0
@@ -19,8 +21,8 @@ func _physics_process(delta: float) -> void:
 	# Add the gravity.
 	if not is_on_floor():
 		velocity += get_gravity() * delta
-	if is_on_floor():
-		lastpos = global_position
+	#if is_on_floor():
+	#	lastpos = global_position
 
 	# Handle jump.
 	if Input.is_action_just_pressed("player_jump") and is_on_floor():
@@ -50,6 +52,14 @@ func _physics_process(delta: float) -> void:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 
 	move_and_slide()
+	if is_on_floor():
+		for i in range(get_slide_collision_count()):
+			var collision = get_slide_collision(i)
+			var collider = collision.get_collider()
+				
+			if collider is StaticBody2D:
+				lastpos = global_position
+				break
 
 func reset():
 	global_position = lastpos
@@ -59,4 +69,13 @@ func glitch_toggle(toggle: bool):
 	for part in poly.get_children():
 		if part is Polygon2D:
 			part.set_instance_shader_parameter("enable_shader", toggle)
-	print("toggled")
+	#print("toggled")
+	
+
+func _on_ripple_body_entered(body: CharacterBody2D) -> void:
+	print("entered unstable area")
+	unstable = true
+
+func _on_ripple_body_exited(body: CharacterBody2D) -> void:
+	print('exited unstable area')
+	unstable = false

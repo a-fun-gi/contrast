@@ -8,6 +8,24 @@
 [ext_resource type="Texture2D" uid="uid://bfmg4q1vogyi5" path="res://assets/2.png" id="6_0h1do"]
 [ext_resource type="Texture2D" uid="uid://dffsbyrklbyjr" path="res://assets/1.png" id="7_4d46k"]
 [ext_resource type="Texture2D" uid="uid://nf2vjtsa2tjc" path="res://assets/0.png" id="8_erw67"]
+[ext_resource type="Theme" uid="uid://b4p5w0o62fmet" path="res://main_theme.tres" id="9_kicr4"]
+[ext_resource type="Shader" uid="uid://bjw2tpjlk4rwe" path="res://shaders/glow-outline.gdshader" id="11_mj13f"]
+
+[sub_resource type="Gradient" id="Gradient_mj13f"]
+offsets = PackedFloat32Array(0.006535948, 1)
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_gonto"]
+gradient = SubResource("Gradient_mj13f")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_kicr4"]
+shader = ExtResource("11_mj13f")
+shader_parameter/color = SubResource("GradientTexture1D_gonto")
+shader_parameter/gradientResolution = 30
+shader_parameter/thickness = 6.1270002910325
+shader_parameter/tolerance = 0.63200003002
+shader_parameter/diagonals = true
+shader_parameter/rounded = true
 
 [node name="CanvasLayer" type="CanvasLayer" unique_id=149057146]
 script = ExtResource("1_0mwgc")
@@ -15,7 +33,12 @@ life_textures = Array[Texture2D]([ExtResource("2_h022r"), ExtResource("3_4jqwt")
 
 [node name="hud" type="Control" parent="." unique_id=1989947844]
 layout_mode = 3
-anchors_preset = 0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("9_kicr4")
 
 [node name="AspectRatioContainer" type="AspectRatioContainer" parent="hud" unique_id=1513273111]
 layout_mode = 1
@@ -25,5 +48,34 @@ offset_right = 10.0
 offset_bottom = 12.0
 
 [node name="TextureRect" type="TextureRect" parent="hud/AspectRatioContainer" unique_id=813157250]
+material = SubResource("ShaderMaterial_kicr4")
 layout_mode = 2
+texture = ExtResource("8_erw67")
 flip_v = true
+
+[node name="move this" type="ColorRect" parent="hud" unique_id=929050448]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_top = 38.0
+offset_right = 116.0
+offset_bottom = 54.0
+grow_horizontal = 2
+color = Color(0.28485027, 0.28485027, 0.28485027, 1)
+
+[node name="ColorRect" type="ColorRect" parent="hud" unique_id=838007978]
+layout_mode = 0
+offset_left = 459.0
+offset_top = 38.0
+offset_right = 461.0
+offset_bottom = 54.0
+color = Color(0.3403393, 0.34033933, 0.3403393, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="hud" unique_id=1511062669]
+layout_mode = 0
+offset_left = 690.0
+offset_top = 38.0
+offset_right = 692.0
+offset_bottom = 54.0
+color = Color(0.3403393, 0.34033933, 0.3403393, 1)

@@ -977,6 +977,7 @@ _data = {
 script = ExtResource("1_s551d")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=440897819]
+visible = false
 position = Vector2(-3, -213)
 shape = SubResource("CapsuleShape2D_21exc")
 
@@ -993,7 +994,7 @@ position = Vector2(-78, -297)
 [node name="torso" type="Bone2D" parent="visuals/main body" unique_id=1184298761]
 position = Vector2(72, 64)
 rotation = 1.5771601
-scale = Vector2(0.99999964, 0.99999964)
+scale = Vector2(0.9999994, 0.9999994)
 rest = Transform2D(-0.0063636936, 0.99997973, -0.99997973, -0.0063636936, 72, 64)
 
 [node name="head" type="Bone2D" parent="visuals/main body/torso" unique_id=844424996]
@@ -1083,6 +1084,7 @@ position = Vector2(-78, -297)
 
 [node name="leg1" type="Polygon2D" parent="visuals/polygons" unique_id=1336169555]
 material = ExtResource("2_yjax8")
+instance_shader_parameters/enable_shader = false
 position = Vector2(-396, -223)
 texture = ExtResource("1_l6tho")
 skeleton = NodePath("../../main body")
@@ -1094,6 +1096,7 @@ internal_vertex_count = 6
 
 [node name="leg2" type="Polygon2D" parent="visuals/polygons" unique_id=1060774107]
 material = ExtResource("2_yjax8")
+instance_shader_parameters/enable_shader = false
 position = Vector2(-459, -223)
 texture = ExtResource("1_l6tho")
 skeleton = NodePath("../../main body")
@@ -1105,6 +1108,7 @@ internal_vertex_count = 6
 
 [node name="head" type="Polygon2D" parent="visuals/polygons" unique_id=1235623101]
 material = ExtResource("2_yjax8")
+instance_shader_parameters/enable_shader = false
 position = Vector2(-263, -265)
 texture = ExtResource("1_l6tho")
 skeleton = NodePath("../../main body")
@@ -1116,6 +1120,7 @@ internal_vertex_count = 26
 
 [node name="torso" type="Polygon2D" parent="visuals/polygons" unique_id=1564162360]
 material = ExtResource("2_yjax8")
+instance_shader_parameters/enable_shader = false
 position = Vector2(-694, -308)
 texture = ExtResource("1_l6tho")
 skeleton = NodePath("../../torso")
