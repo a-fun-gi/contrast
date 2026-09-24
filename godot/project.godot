@@ -17,7 +17,7 @@ ss2d/version="3.3.2"
 config/name="contrast"
 run/main_scene="uid://cmvr5ma6kgera"
 config/features=PackedStringArray("4.7", "Forward Plus")
-config/icon="res://icon.svg"
+config/icon="uid://ddbwocyktrbh5"
 
 [autoload]
 
