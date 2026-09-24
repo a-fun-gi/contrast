@@ -124,6 +124,7 @@ offset_right = 0.0010986328
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.9999981, 1)
+mouse_filter = 2
 
 [connection signal="pressed" from="CenterContainer/VBoxContainer/Button" to="." method="_on_play_button_pressed"]
 [connection signal="pressed" from="CenterContainer/VBoxContainer/Button2" to="." method="_on_quit_button_pressed"]
