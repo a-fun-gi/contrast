@@ -25,6 +25,15 @@ expand_margin_bottom = 2.0
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1g8jr"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_21exc"]
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.6913568, 0.69135684, 0.6913566, 1)
+border_blend = true
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_a2l2q"]
 bg_color = Color(0, 0, 0, 1)
 
@@ -48,5 +57,6 @@ Label/constants/shadow_offset_y = 1
 Label/constants/shadow_outline_size = 1
 Label/styles/focus = SubResource("StyleBoxFlat_fe2o3")
 Label/styles/normal = SubResource("StyleBoxEmpty_1g8jr")
+PanelContainer/styles/panel = SubResource("StyleBoxFlat_21exc")
 ProgressBar/styles/background = SubResource("StyleBoxFlat_a2l2q")
 ProgressBar/styles/fill = SubResource("StyleBoxFlat_0omi4")
