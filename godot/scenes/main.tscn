@@ -15,6 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://bj7rqb8uwiwmo" path="res://scenes/terrain/invert.tscn" id="13_trceg"]
 [ext_resource type="PackedScene" uid="uid://3omylfemrbt7" path="res://scenes/terrain/ripple-zone.tscn" id="14_a8y0u"]
 [ext_resource type="PackedScene" uid="uid://boyi8bjdvqu1j" path="res://scenes/terrain/walls.tscn" id="15_jkv2x"]
+[ext_resource type="PackedScene" uid="uid://bs3kkrdcbaa30" path="res://scenes/ui/pause menu.tscn" id="16_jbj1t"]
 
 [sub_resource type="Animation" id="Animation_eb6dy"]
 length = 0.001
@@ -355,6 +356,11 @@ position_smoothing_speed = 15.0
 
 [node name="terrain" type="Node2D" parent="." unique_id=906218129]
 
+[node name="StaticBody2D10" parent="terrain" unique_id=1943535163 instance=ExtResource("5_tbgi4")]
+position = Vector2(5699.999, 886.9999)
+rotation = -1.5712355
+scale = Vector2(0.99999994, 0.99999994)
+
 [node name="AnimatableBody2D2" parent="terrain" unique_id=2084512860 instance=ExtResource("2_jyhfs")]
 position = Vector2(3025, 439)
 
@@ -428,6 +434,18 @@ process_material = SubResource("ParticleProcessMaterial_jbj1t")
 lifetime = 3.68
 process_material = SubResource("ParticleProcessMaterial_muem4")
 
+[node name="walls2" parent="." unique_id=1789562853 instance=ExtResource("15_jkv2x")]
+position = Vector2(5055, 222)
+scale = Vector2(13.319995, 5.64)
+
+[node name="GPUParticles2D" parent="walls2" index="0" unique_id=1487848240]
+lifetime = 3.87
+process_material = SubResource("ParticleProcessMaterial_jbj1t")
+
+[node name="GPUParticles2D2" parent="walls2" index="1" unique_id=387757668]
+lifetime = 3.68
+process_material = SubResource("ParticleProcessMaterial_muem4")
+
 [node name="inverters" type="Node2D" parent="." unique_id=1784691390]
 
 [node name="invert" parent="inverters" unique_id=67366047 instance=ExtResource("13_trceg")]
@@ -450,7 +468,11 @@ copy_mode = 2
 position = Vector2(2198, 255.99998)
 scale = Vector2(3.8399982, 3.04)
 
+[node name="pause_menu" parent="." unique_id=753297295 instance=ExtResource("16_jbj1t")]
+visible = false
+
 [connection signal="body_entered" from="ripple" to="player" method="_on_ripple_body_entered"]
 [connection signal="body_exited" from="ripple" to="player" method="_on_ripple_body_exited"]
 
 [editable path="walls"]
+[editable path="walls2"]

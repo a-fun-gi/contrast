@@ -1,0 +1,62 @@
+[gd_scene format=3 uid="uid://bs3kkrdcbaa30"]
+
+[ext_resource type="Script" uid="uid://cr1o5iricseq0" path="res://scenes/ui/pause_menu.gd" id="1_pf5s4"]
+[ext_resource type="Theme" uid="uid://b4p5w0o62fmet" path="res://main_theme.tres" id="1_ty7to"]
+
+[node name="CanvasLayer" type="CanvasLayer" unique_id=950344907]
+script = ExtResource("1_pf5s4")
+
+[node name="menu" type="Control" parent="." unique_id=753297295]
+process_mode = 2
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_ty7to")
+
+[node name="ColorRect" type="ColorRect" parent="menu" unique_id=1769953120]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.5372549)
+
+[node name="CenterContainer" type="CenterContainer" parent="menu" unique_id=1629346337]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -21.5
+offset_top = -31.0
+offset_right = 21.5
+offset_bottom = 31.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="menu/CenterContainer" unique_id=1861213795]
+layout_mode = 2
+theme = ExtResource("1_ty7to")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="menu/CenterContainer/PanelContainer" unique_id=1184867274]
+layout_mode = 2
+
+[node name="Button" type="Button" parent="menu/CenterContainer/PanelContainer/VBoxContainer" unique_id=1033256554]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "quit"
+flat = true
+
+[node name="Button2" type="Button" parent="menu/CenterContainer/PanelContainer/VBoxContainer" unique_id=1699548812]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "back"
+flat = true
+
+[connection signal="pressed" from="menu/CenterContainer/PanelContainer/VBoxContainer/Button" to="." method="_on_quit_button_pressed"]
+[connection signal="pressed" from="menu/CenterContainer/PanelContainer/VBoxContainer/Button2" to="." method="_on_back_button_pressed"]

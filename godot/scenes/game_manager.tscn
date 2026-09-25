@@ -1,3 +1,4 @@
 [gd_scene format=3 uid="uid://cmvr5ma6kgera"]
 
 [node name="GameManager" type="Node" unique_id=1840785326]
+process_mode = 3
