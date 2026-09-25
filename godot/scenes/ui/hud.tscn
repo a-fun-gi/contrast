@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://bfmg4q1vogyi5" path="res://assets/2.png" id="6_0h1do"]
 [ext_resource type="Texture2D" uid="uid://dffsbyrklbyjr" path="res://assets/1.png" id="7_4d46k"]
 [ext_resource type="Texture2D" uid="uid://nf2vjtsa2tjc" path="res://assets/0.png" id="8_erw67"]
+[ext_resource type="Texture2D" uid="uid://c0hiren3xvh4" path="res://assets/brackeys_vfx_bundle/brackeys_vfx_bundle/particles/alpha/circle_05_a.png" id="9_4jqwt"]
 [ext_resource type="Theme" uid="uid://b4p5w0o62fmet" path="res://main_theme.tres" id="9_kicr4"]
 [ext_resource type="Shader" uid="uid://bjw2tpjlk4rwe" path="res://shaders/glow-outline.gdshader" id="11_mj13f"]
 
@@ -40,6 +41,16 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("9_kicr4")
 
+[node name="TextureRect2" type="TextureRect" parent="hud" unique_id=781592093]
+visible = false
+layout_mode = 0
+offset_left = -75.0
+offset_top = -73.0
+offset_right = 437.0
+offset_bottom = 439.0
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("9_4jqwt")
+
 [node name="AspectRatioContainer" type="AspectRatioContainer" parent="hud" unique_id=1513273111]
 layout_mode = 1
 offset_left = 10.0
@@ -62,6 +73,7 @@ offset_top = 38.0
 offset_right = 116.0
 offset_bottom = 54.0
 grow_horizontal = 2
+scale = Vector2(1e-05, 1)
 color = Color(0.28485027, 0.28485027, 0.28485027, 1)
 
 [node name="ColorRect" type="ColorRect" parent="hud" unique_id=838007978]

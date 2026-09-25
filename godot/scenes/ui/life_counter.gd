@@ -23,3 +23,5 @@ func _update_life_display() -> void:
 			bar.scale.x -= 0.0045
 		elif not player.inverted and bar.scale.x < 1:
 			bar.scale.x += 0.0045
+	else:
+		bar.scale.x = 0
