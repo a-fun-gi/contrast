@@ -6,7 +6,6 @@
 [ext_resource type="PackedScene" uid="uid://g2uu3ncq40g4" path="res://scenes/terrain/large_rect.tscn" id="2_0wfyh"]
 [ext_resource type="PackedScene" uid="uid://eyjarbi1ge4b" path="res://scenes/terrain/MOVABLE SQUARE.tscn" id="2_jyhfs"]
 [ext_resource type="PackedScene" uid="uid://cpetr1sg3cm8c" path="res://scenes/ui/hud.tscn" id="2_ya4ey"]
-[ext_resource type="PackedScene" uid="uid://c0i36cpvpqq4u" path="res://scenes/eclipse.tscn" id="3_choun"]
 [ext_resource type="PackedScene" uid="uid://bx0hv2w8ftjve" path="res://scenes/terrain/squre.tscn" id="4_tbgi4"]
 [ext_resource type="PackedScene" uid="uid://bte6c8qabhdk3" path="res://scenes/terrain/skinny_rect.tscn" id="5_tbgi4"]
 [ext_resource type="PackedScene" uid="uid://tq0qcg1kgyak" path="res://scenes/terrain/circle.tscn" id="6_tefeu"]
@@ -17,6 +16,7 @@
 [ext_resource type="PackedScene" uid="uid://boyi8bjdvqu1j" path="res://scenes/terrain/walls.tscn" id="15_jkv2x"]
 [ext_resource type="PackedScene" uid="uid://bs3kkrdcbaa30" path="res://scenes/ui/pause menu.tscn" id="16_jbj1t"]
 [ext_resource type="AudioStream" uid="uid://tugyyagy33xd" path="res://assets/audio/soundreality-wind-blowing-457954.mp3" id="17_dp3eg"]
+[ext_resource type="PackedScene" uid="uid://dwpatjnkdry83" path="res://scenes/terrain/portal.tscn" id="17_muem4"]
 
 [sub_resource type="Animation" id="Animation_eb6dy"]
 length = 0.001
@@ -325,26 +325,21 @@ scale_min = 0.19999999
 scale_max = 0.7
 
 [node name="main" type="Node2D" unique_id=1593916627]
+process_mode = 1
 
 [node name="LoopManager" type="Node" parent="." unique_id=312628614]
 unique_name_in_owner = true
 script = ExtResource("1_choun")
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1738743405]
+[node name="Parallax2D" type="Parallax2D" parent="." unique_id=711210797]
+scroll_scale = Vector2(0, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="Parallax2D" unique_id=1738743405]
 position = Vector2(2.999878, 3.0000076)
 scale = Vector2(17.099014, 46.80387)
 texture = ExtResource("1_tipki")
 region_enabled = true
 region_rect = Rect2(401.0051, 351.10455, 945.8091, 295.74884)
-
-[node name="Parallax2D" type="Parallax2D" parent="." unique_id=711210797]
-scroll_scale = Vector2(0, 0)
-
-[node name="eclipse" parent="Parallax2D" unique_id=1859557419 instance=ExtResource("3_choun")]
-visible = false
-position = Vector2(-183, -103.00003)
-rotation = -3.1415925
-scale = Vector2(1.5, 1.5)
 
 [node name="player" parent="." unique_id=1473186542 instance=ExtResource("1_o5qli")]
 scale = Vector2(0.7, 0.7)
@@ -424,7 +419,7 @@ autoplay = &"move"
 [node name="hud" parent="." unique_id=149057146 instance=ExtResource("2_ya4ey")]
 
 [node name="walls" parent="." unique_id=374492164 instance=ExtResource("15_jkv2x")]
-position = Vector2(1555.0001, 222)
+position = Vector2(1561, 222)
 scale = Vector2(13.319995, 5.64)
 
 [node name="GPUParticles2D" parent="walls" index="0" unique_id=1487848240]
@@ -436,7 +431,7 @@ lifetime = 3.68
 process_material = SubResource("ParticleProcessMaterial_muem4")
 
 [node name="walls2" parent="." unique_id=1789562853 instance=ExtResource("15_jkv2x")]
-position = Vector2(5055, 222)
+position = Vector2(3985, 247)
 scale = Vector2(13.319995, 5.64)
 
 [node name="GPUParticles2D" parent="walls2" index="0" unique_id=1487848240]
@@ -466,11 +461,14 @@ scale = Vector2(9.90164, 9.21225)
 copy_mode = 2
 
 [node name="ripple" parent="." unique_id=1118354579 instance=ExtResource("14_a8y0u")]
-position = Vector2(2198, 255.99998)
-scale = Vector2(3.8399982, 3.04)
+position = Vector2(2033.0002, 287)
+scale = Vector2(2.599998, 3.04)
 
 [node name="pause_menu" parent="." unique_id=753297295 instance=ExtResource("16_jbj1t")]
 visible = false
+
+[node name="portal" parent="." unique_id=780019999 instance=ExtResource("17_muem4")]
+position = Vector2(5862, 710)
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1364586708]
 stream = ExtResource("17_dp3eg")

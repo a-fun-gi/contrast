@@ -1,4 +1,227 @@
+[gd_scene format=3 uid="uid://de2ojt5cxd0hp"]
+
+[ext_resource type="Script" uid="uid://xja4q0shbta6" path="res://scenes/maingameloopmanager.gd" id="1_l0l3m"]
+[ext_resource type="Texture2D" uid="uid://dqhf6qw15neb" path="res://assets/terrain_w.png" id="2_owpos"]
+[ext_resource type="PackedScene" uid="uid://b421st8117udf" path="res://scenes/player_2.tscn" id="3_f241j"]
+[ext_resource type="Texture2D" uid="uid://d3rdkg7dkxrcp" path="res://scenes/terrain/rain.tres" id="4_1k1ng"]
+[ext_resource type="PackedScene" uid="uid://cpetr1sg3cm8c" path="res://scenes/ui/hud.tscn" id="4_f241j"]
+[ext_resource type="PackedScene" uid="uid://bte6c8qabhdk3" path="res://scenes/terrain/skinny_rect.tscn" id="5_hmh72"]
+[ext_resource type="PackedScene" uid="uid://dwhadwu4etnhw" path="res://scenes/dropzone.tscn" id="5_r4383"]
+[ext_resource type="PackedScene" uid="uid://g2uu3ncq40g4" path="res://scenes/terrain/large_rect.tscn" id="6_r4383"]
+[ext_resource type="PackedScene" uid="uid://tq0qcg1kgyak" path="res://scenes/terrain/circle.tscn" id="7_xb34a"]
+[ext_resource type="PackedScene" uid="uid://eyjarbi1ge4b" path="res://scenes/terrain/MOVABLE SQUARE.tscn" id="8_1k1ng"]
+[ext_resource type="PackedScene" uid="uid://bj7rqb8uwiwmo" path="res://scenes/terrain/invert.tscn" id="9_ugyvg"]
+[ext_resource type="Texture2D" uid="uid://c081371lukm1a" path="res://assets/terrain.png" id="10_xb34a"]
 [ext_resource type="AudioStream" uid="uid://cvmaobcdxfl6" path="res://assets/audio/soundreality-rain-sound-550289.mp3" id="13_ugyvg"]
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_xb34a"]
+particle_flag_disable_z = true
+emission_shape_scale = Vector3(2, 1, 1)
+emission_shape = 3
+emission_box_extents = Vector3(1700, 0, 0)
+direction = Vector3(0, 1, 0)
+spread = 0.0
+initial_velocity_min = 300.0
+initial_velocity_max = 500.0
+gravity = Vector3(50, 800, 0)
+color = Color(1, 1, 1, 0.7529412)
+collision_mode = 2
+sub_emitter_mode = 3
+sub_emitter_amount_at_collision = 10
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ugyvg"]
+atlas = ExtResource("10_xb34a")
+region = Rect2(603.006, 374.84927, 2.8966064, 3.125824)
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_5cd25"]
+particle_flag_disable_z = true
+angle_min = 90.000015
+angle_max = 180.00002
+direction = Vector3(0, -1, 0)
+spread = 60.0
+initial_velocity_min = 100.0
+initial_velocity_max = 100.0
+gravity = Vector3(0, 0, 0)
+
+[sub_resource type="Animation" id="Animation_k6ibc"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatableBody2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1756, 2198)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatableBody2D2:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(2173, 2202)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("AnimatableBody2D3:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(2595, 2202)]
+}
+
+[sub_resource type="Animation" id="Animation_wwjik"]
+resource_name = "move"
+length = 4.5333333
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatableBody2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.5666667, 3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(1756, 2198), Vector2(1756, 1697), Vector2(1756, 2506)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatableBody2D2:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1.5666667, 3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(2173, 2202), Vector2(2173, 2513), Vector2(2173, 1704)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("AnimatableBody2D3:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1.5666667, 3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(2595, 2202), Vector2(2595, 1701), Vector2(2595, 2525)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_6fig5"]
+_data = {
+&"RESET": SubResource("Animation_k6ibc"),
+&"move": SubResource("Animation_wwjik")
+}
+
+[node name="main2" type="Node2D" unique_id=312754921]
+
+[node name="LoopManager" type="Node" parent="." unique_id=1815093461]
+unique_name_in_owner = true
+script = ExtResource("1_l0l3m")
+
+[node name="Parallax2D" type="Parallax2D" parent="." unique_id=1162857154]
+
+[node name="Sprite2D" type="Sprite2D" parent="Parallax2D" unique_id=582407137]
+position = Vector2(2.999878, 3.0000076)
+scale = Vector2(17.099014, 46.80387)
+texture = ExtResource("2_owpos")
+region_enabled = true
+region_rect = Rect2(401.0051, 351.10455, 945.8091, 295.74884)
+
+[node name="rain" type="GPUParticles2D" parent="Parallax2D" unique_id=1895587832]
+position = Vector2(10, -972.00006)
+scale = Vector2(0.7, 0.7)
+amount = 200
+sub_emitter = NodePath("../../splash")
+texture = ExtResource("4_1k1ng")
+lifetime = 2.0
+speed_scale = 0.7
+fixed_fps = 0
+draw_order = 0
+process_material = SubResource("ParticleProcessMaterial_xb34a")
+
+[node name="player" parent="." unique_id=1473186542 instance=ExtResource("3_f241j")]
+scale = Vector2(0.7, 0.7)
+
+[node name="Camera2D" type="Camera2D" parent="player" unique_id=1076433202]
+position = Vector2(1, -1)
+zoom = Vector2(0.5, 0.5)
+position_smoothing_enabled = true
+position_smoothing_speed = 15.0
+
+[node name="splash" type="GPUParticles2D" parent="." unique_id=981078524]
+position = Vector2(9.999999, -972)
+scale = Vector2(0.9999998, 0.9999998)
+amount = 4
+texture = SubResource("AtlasTexture_ugyvg")
+lifetime = 0.4
+process_material = SubResource("ParticleProcessMaterial_5cd25")
+
+[node name="hud" parent="." unique_id=149057146 instance=ExtResource("4_f241j")]
+
+[node name="dropzone" parent="." unique_id=1037339053 instance=ExtResource("5_r4383")]
+position = Vector2(487, 2910)
+
+[node name="terrain" type="Node2D" parent="." unique_id=940526874]
+
+[node name="StaticBody2D" parent="terrain" unique_id=864551730 instance=ExtResource("5_hmh72")]
+position = Vector2(-2, 282)
+
+[node name="StaticBody2D2" parent="terrain" unique_id=1349026834 instance=ExtResource("5_hmh72")]
+position = Vector2(298, 576)
+
+[node name="StaticBody2D3" parent="terrain" unique_id=1564045752 instance=ExtResource("5_hmh72")]
+position = Vector2(591, 764)
+
+[node name="StaticBody2D4" parent="terrain" unique_id=1503935727 instance=ExtResource("5_hmh72")]
+position = Vector2(-304, 573)
+
+[node name="StaticBody2D5" parent="terrain" unique_id=323248746 instance=ExtResource("5_hmh72")]
+position = Vector2(-601, 764)
+
+[node name="StaticBody2D6" parent="terrain" unique_id=1598109844 instance=ExtResource("6_r4383")]
+position = Vector2(-30, 1526)
+
+[node name="StaticBody2D7" parent="terrain" unique_id=1624918828 instance=ExtResource("7_xb34a")]
+position = Vector2(767, 1960)
+
+[node name="StaticBody2D8" parent="terrain" unique_id=82358785 instance=ExtResource("7_xb34a")]
+position = Vector2(1208, 2149)
+
+[node name="AnimatableBody2D" parent="terrain" unique_id=2084512860 instance=ExtResource("8_1k1ng")]
+position = Vector2(1756, 2198)
+
+[node name="AnimatableBody2D2" parent="terrain" unique_id=89101844 instance=ExtResource("8_1k1ng")]
+position = Vector2(2173, 2202)
+
+[node name="AnimatableBody2D3" parent="terrain" unique_id=778350554 instance=ExtResource("8_1k1ng")]
+position = Vector2(2595, 2202)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="terrain" unique_id=1900383086]
+libraries/ = SubResource("AnimationLibrary_6fig5")
+autoplay = &"move"
+
+[node name="invert" parent="." unique_id=67366047 instance=ExtResource("9_ugyvg")]
+position = Vector2(-681, 1766)
+rotation = -0.8424969
+scale = Vector2(21.999851, 21.551807)
+
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=322401663]
 stream = ExtResource("13_ugyvg")
 autoplay = true
