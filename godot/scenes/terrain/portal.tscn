@@ -1,0 +1,56 @@
+[gd_scene format=3 uid="uid://dwpatjnkdry83"]
+
+[ext_resource type="Texture2D" uid="uid://8adlfagnb5nl" path="res://assets/star_02_a.png" id="1_hphkh"]
+[ext_resource type="Script" uid="uid://wphja2nux0wl" path="res://scenes/terrain/portal.gd" id="1_tesvv"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_l2tq2"]
+radius = 58.0
+height = 236.0
+
+[sub_resource type="Curve" id="Curve_wt50x"]
+_data = [Vector2(0, 0.9909091), 0.0, 0.0, 0, 0, Vector2(0.40068495, 0.9636364), 0.0, 0.0, 0, 0, Vector2(0.85616446, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="CurveTexture" id="CurveTexture_sd4o7"]
+curve = SubResource("Curve_wt50x")
+
+[sub_resource type="Gradient" id="Gradient_tesvv"]
+colors = PackedColorArray(0.48570347, 0.48570353, 0.48570347, 1, 0.78352344, 0.7835234, 0.7835234, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_t0bun"]
+gradient = SubResource("Gradient_tesvv")
+
+[sub_resource type="Curve" id="Curve_mk54e"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0.6272727), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_l2tq2"]
+curve = SubResource("Curve_mk54e")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_us3g1"]
+particle_flag_disable_z = true
+emission_shape = 1
+emission_sphere_radius = 48.24
+angle_min = -44.99999
+angle_max = 45.00001
+gravity = Vector3(0, -40, 0)
+scale_min = 0.049999997
+scale_max = 0.099999994
+scale_curve = SubResource("CurveTexture_l2tq2")
+color_ramp = SubResource("GradientTexture1D_t0bun")
+alpha_curve = SubResource("CurveTexture_sd4o7")
+
+[node name="portal" type="Area2D" unique_id=780019999]
+script = ExtResource("1_tesvv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2140148952]
+shape = SubResource("CapsuleShape2D_l2tq2")
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="." unique_id=1667119926]
+position = Vector2(1, 92)
+amount = 100
+texture = ExtResource("1_hphkh")
+lifetime = 4.0
+process_material = SubResource("ParticleProcessMaterial_us3g1")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
