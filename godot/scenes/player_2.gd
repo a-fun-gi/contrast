@@ -13,7 +13,7 @@ const JUMP_VELOCITY = -700.0
 var lastpos: Vector2
 
 func _ready() -> void:
-	print("!!! THE SCRIPT IS ALIVE !!!")
+	print("i am alve...")
 	lastpos = global_position
 	# glitch_toggle(true)
 
@@ -72,10 +72,12 @@ func glitch_toggle(toggle: bool):
 	#print("toggled")
 	
 
-func _on_ripple_body_entered(body: CharacterBody2D) -> void:
-	print("entered unstable area")
-	unstable = true
+func _on_ripple_body_entered(body: Node2D) -> void:
+	if body is CharacterBody2D:
+		print("entered unstable area")
+		unstable = true
 
-func _on_ripple_body_exited(body: CharacterBody2D) -> void:
-	print('exited unstable area')
-	unstable = false
+func _on_ripple_body_exited(body: Node2D) -> void:
+	if body is CharacterBody2D:
+		print('exited unstable area')
+		unstable = false
