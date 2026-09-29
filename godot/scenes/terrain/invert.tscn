@@ -16,6 +16,7 @@ script = ExtResource("1_3q0i4")
 material = SubResource("ShaderMaterial_3q0i4")
 offset_right = 100.0
 offset_bottom = 100.0
+mouse_filter = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=271263140]
 visible = false
