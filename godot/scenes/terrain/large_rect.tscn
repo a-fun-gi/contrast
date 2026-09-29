@@ -5,6 +5,9 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_21exc"]
 size = Vector2(993, 340)
 
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_21exc"]
+polygon = PackedVector2Array(-497, -166, 492, -166, 493, 171, -498, 171)
+
 [node name="StaticBody2D" type="StaticBody2D" unique_id=1598109844]
 
 [node name="TerrainW" type="Sprite2D" parent="." unique_id=758587033]
@@ -15,3 +18,7 @@ region_rect = Rect2(334.42932, 281.30692, 1081.9078, 426.07956)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=644278288]
 position = Vector2(-0.5, 3)
 shape = SubResource("RectangleShape2D_21exc")
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="." unique_id=1083629417]
+visible = false
+occluder = SubResource("OccluderPolygon2D_21exc")
