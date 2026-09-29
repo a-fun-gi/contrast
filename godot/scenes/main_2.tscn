@@ -1,0 +1,4 @@
+[ext_resource type="AudioStream" uid="uid://cvmaobcdxfl6" path="res://assets/audio/soundreality-rain-sound-550289.mp3" id="13_ugyvg"]
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=322401663]
+stream = ExtResource("13_ugyvg")
+autoplay = true

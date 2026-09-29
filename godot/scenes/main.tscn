@@ -16,6 +16,7 @@
 [ext_resource type="PackedScene" uid="uid://3omylfemrbt7" path="res://scenes/terrain/ripple-zone.tscn" id="14_a8y0u"]
 [ext_resource type="PackedScene" uid="uid://boyi8bjdvqu1j" path="res://scenes/terrain/walls.tscn" id="15_jkv2x"]
 [ext_resource type="PackedScene" uid="uid://bs3kkrdcbaa30" path="res://scenes/ui/pause menu.tscn" id="16_jbj1t"]
+[ext_resource type="AudioStream" uid="uid://tugyyagy33xd" path="res://assets/audio/soundreality-wind-blowing-457954.mp3" id="17_dp3eg"]
 
 [sub_resource type="Animation" id="Animation_eb6dy"]
 length = 0.001
@@ -470,6 +471,11 @@ scale = Vector2(3.8399982, 3.04)
 
 [node name="pause_menu" parent="." unique_id=753297295 instance=ExtResource("16_jbj1t")]
 visible = false
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1364586708]
+stream = ExtResource("17_dp3eg")
+autoplay = true
+bus = &"sfx"
 
 [connection signal="body_entered" from="ripple" to="player" method="_on_ripple_body_entered"]
 [connection signal="body_exited" from="ripple" to="player" method="_on_ripple_body_exited"]
