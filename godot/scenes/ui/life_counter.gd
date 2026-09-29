@@ -16,7 +16,6 @@ func _process(delta: float) -> void:
 func _update_life_display() -> void:
 	life = loop_manager.health
 	if life_textures.size() > 0:
-		# Swaps the display texture to the matching PNG file
 		rect.texture = life_textures[life]
 	if player.unstable:
 		if player.inverted and bar.scale.x > -1:
