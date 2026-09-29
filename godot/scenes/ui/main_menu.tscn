@@ -91,10 +91,17 @@ layout_mode = 2
 text = "Play"
 flat = true
 
-[node name="Button3" type="Button" parent="CenterContainer/VBoxContainer" unique_id=793996444]
+[node name="Button3" type="LinkButton" parent="CenterContainer/VBoxContainer" unique_id=1189733034]
 layout_mode = 2
-text = "Options"
-flat = true
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(0.4545241, 0.45452416, 0.45452517, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 40
+text = "Source"
+underline = 1
+uri = "https://github.com/a-fun-gi/contrast"
 
 [node name="Button2" type="Button" parent="CenterContainer/VBoxContainer" unique_id=1243353065]
 layout_mode = 2
