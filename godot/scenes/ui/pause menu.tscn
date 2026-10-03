@@ -47,6 +47,7 @@ theme = ExtResource("1_ty7to")
 layout_mode = 2
 
 [node name="Button2" type="Button" parent="menu/CenterContainer/PanelContainer/VBoxContainer" unique_id=1699548812]
+process_mode = 2
 layout_mode = 2
 theme_override_font_sizes/font_size = 30
 text = "back"
