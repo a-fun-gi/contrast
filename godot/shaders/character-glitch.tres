@@ -15,3 +15,4 @@ shader_parameter/color_flash_strength = 0.0
 shader_parameter/scanline_strength = 0.18
 shader_parameter/local_warp_strength = 0.0
 shader_parameter/flip_chance = 0.0
+shader_parameter/fade_amount = 1.0

@@ -37,6 +37,8 @@ uniform float local_warp_strength = 0.14;
 uniform float flip_chance : hint_range(0.0,1.0) = 0.15;
 
 instance uniform bool enable_shader = false;
+
+uniform float fade_amount : hint_range(0.0, 1.0) = 1.0;
 /* ================= RANDOM FUNCTIONS ================= */
 
 float rand(float x) { 
@@ -113,4 +115,5 @@ void fragment() {
 	} else {
 		COLOR = original_color;
 	}
+	COLOR.a *= fade_amount;
 }
