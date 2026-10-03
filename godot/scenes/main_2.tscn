@@ -18,7 +18,7 @@
 particle_flag_disable_z = true
 emission_shape_scale = Vector3(2, 1, 1)
 emission_shape = 3
-emission_box_extents = Vector3(1700, 0, 0)
+emission_box_extents = Vector3(100, 0, 0)
 direction = Vector3(0, 1, 0)
 spread = 0.0
 initial_velocity_min = 300.0
@@ -136,6 +136,7 @@ unique_name_in_owner = true
 script = ExtResource("1_l0l3m")
 
 [node name="Parallax2D" type="Parallax2D" parent="." unique_id=1162857154]
+scroll_offset = Vector2(4, 4)
 
 [node name="Sprite2D" type="Sprite2D" parent="Parallax2D" unique_id=582407137]
 position = Vector2(2.999878, 3.0000076)
@@ -144,10 +145,13 @@ texture = ExtResource("2_owpos")
 region_enabled = true
 region_rect = Rect2(401.0051, 351.10455, 945.8091, 295.74884)
 
-[node name="rain" type="GPUParticles2D" parent="Parallax2D" unique_id=1895587832]
-position = Vector2(10, -972.00006)
+[node name="player" parent="." unique_id=1473186542 instance=ExtResource("3_f241j")]
 scale = Vector2(0.7, 0.7)
-amount = 200
+
+[node name="rain" type="GPUParticles2D" parent="player" unique_id=1895587832]
+position = Vector2(14.285713, -1388.5715)
+scale = Vector2(9.999999, 9.999999)
+amount = 150
 sub_emitter = NodePath("../../splash")
 texture = ExtResource("4_1k1ng")
 lifetime = 2.0
@@ -155,9 +159,6 @@ speed_scale = 0.7
 fixed_fps = 0
 draw_order = 0
 process_material = SubResource("ParticleProcessMaterial_xb34a")
-
-[node name="player" parent="." unique_id=1473186542 instance=ExtResource("3_f241j")]
-scale = Vector2(0.7, 0.7)
 
 [node name="Camera2D" type="Camera2D" parent="player" unique_id=1076433202]
 position = Vector2(1, -1)
