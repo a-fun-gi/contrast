@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://c44mndsuqn027"]
+
+[ext_resource type="Material" uid="uid://y66bh0q51qyk" path="res://shaders/character-glitch.tres" id="1_l27rt"]
+[ext_resource type="Texture2D" uid="uid://cfnit2ubut4us" path="res://assets/head_forward.png" id="2_jw8ty"]
+
+[node name="Node2D" type="Node2D" unique_id=1731145923]
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1841475741]
+material = ExtResource("1_l27rt")
+instance_shader_parameters/enable_shader = true
+offset_left = -191.0
+offset_top = -108.0
+offset_right = 189.0
+offset_bottom = 104.0
+
+[node name="HeadForward" type="Sprite2D" parent="." unique_id=860476338]
+material = ExtResource("1_l27rt")
+instance_shader_parameters/enable_shader = true
+position = Vector2(-79, -6)
+texture = ExtResource("2_jw8ty")
+
+[node name="HeadForward2" type="Sprite2D" parent="." unique_id=1375295173]
+material = ExtResource("1_l27rt")
+instance_shader_parameters/enable_shader = true
+position = Vector2(112, -8)
+texture = ExtResource("2_jw8ty")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1116603851]
+zoom = Vector2(3, 3)
