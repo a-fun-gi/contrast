@@ -6,7 +6,7 @@
 radius = 146.3284
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_21exc"]
-polygon = PackedVector2Array(-80, -123, 27, -143, 99, -110, 148, -44, 145, 61, 13, 145, -111, 96, -149, 8, -109, -98)
+polygon = PackedVector2Array(-73, -140, 37, -158, 127, -120, 175, -17, 149, 98, -5, 164, -135, 101, -176, -6, -120, -104)
 
 [node name="StaticBody2D" type="StaticBody2D" unique_id=1624918828]
 
@@ -20,5 +20,4 @@ region_rect = Rect2(471.8075, 1391.9738, 383.63452, 366.9547)
 shape = SubResource("CircleShape2D_21exc")
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="." unique_id=666821826]
-visible = false
 occluder = SubResource("OccluderPolygon2D_21exc")

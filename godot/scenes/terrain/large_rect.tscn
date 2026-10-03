@@ -6,7 +6,7 @@
 size = Vector2(993, 340)
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_21exc"]
-polygon = PackedVector2Array(-497, -166, 492, -166, 493, 171, -498, 171)
+polygon = PackedVector2Array(-506, -175, 501, -173, 505, 183, -507, 175)
 
 [node name="StaticBody2D" type="StaticBody2D" unique_id=1598109844]
 
@@ -20,5 +20,4 @@ position = Vector2(-0.5, 3)
 shape = SubResource("RectangleShape2D_21exc")
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="." unique_id=1083629417]
-visible = false
 occluder = SubResource("OccluderPolygon2D_21exc")

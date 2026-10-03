@@ -6,7 +6,7 @@
 size = Vector2(123, 464)
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_21exc"]
-polygon = PackedVector2Array(-65, -237, 55, -237, 58, 226, -62, 230)
+polygon = PackedVector2Array(-75, -244, 68, -246, 68, 234, -71, 237)
 
 [node name="StaticBody2D" type="StaticBody2D" unique_id=864551730]
 
