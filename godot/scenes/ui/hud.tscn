@@ -74,15 +74,16 @@ offset_left = -117.0
 offset_top = 38.0
 offset_right = -115.0
 offset_bottom = 54.0
+grow_horizontal = 2
 color = Color(0.3403393, 0.34033933, 0.3403393, 1)
 
 [node name="ColorRect2" type="ColorRect" parent="hud" unique_id=1511062669]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.601
-anchor_right = 0.601
-offset_left = -2.3519897
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 114.0
 offset_top = 38.0
-offset_right = -0.35198975
+offset_right = 116.0
 offset_bottom = 54.0
 color = Color(0.3403393, 0.34033933, 0.3403393, 1)
