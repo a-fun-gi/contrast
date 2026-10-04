@@ -51,6 +51,7 @@ position = Vector2(1, 92)
 amount = 100
 texture = ExtResource("1_hphkh")
 lifetime = 4.0
+preprocess = 4.0
 process_material = SubResource("ParticleProcessMaterial_us3g1")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

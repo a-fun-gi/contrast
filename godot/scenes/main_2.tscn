@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://eyjarbi1ge4b" path="res://scenes/terrain/MOVABLE SQUARE.tscn" id="8_1k1ng"]
 [ext_resource type="PackedScene" uid="uid://bj7rqb8uwiwmo" path="res://scenes/terrain/invert.tscn" id="9_ugyvg"]
 [ext_resource type="Texture2D" uid="uid://c081371lukm1a" path="res://assets/terrain.png" id="10_xb34a"]
+[ext_resource type="PackedScene" uid="uid://dwpatjnkdry83" path="res://scenes/terrain/portal.tscn" id="12_k6ibc"]
 [ext_resource type="AudioStream" uid="uid://cvmaobcdxfl6" path="res://assets/audio/soundreality-rain-sound-550289.mp3" id="13_ugyvg"]
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_xb34a"]
@@ -181,6 +182,9 @@ position = Vector2(487, 2910)
 
 [node name="terrain" type="Node2D" parent="." unique_id=940526874]
 
+[node name="StaticBody2D9" parent="terrain" unique_id=1598109844 instance=ExtResource("6_r4383")]
+position = Vector2(3567, 2249)
+
 [node name="StaticBody2D" parent="terrain" unique_id=864551730 instance=ExtResource("5_hmh72")]
 position = Vector2(-2, 282)
 
@@ -196,7 +200,7 @@ position = Vector2(-304, 573)
 [node name="StaticBody2D5" parent="terrain" unique_id=323248746 instance=ExtResource("5_hmh72")]
 position = Vector2(-601, 764)
 
-[node name="StaticBody2D6" parent="terrain" unique_id=1598109844 instance=ExtResource("6_r4383")]
+[node name="StaticBody2D6" parent="terrain" unique_id=256590787 instance=ExtResource("6_r4383")]
 position = Vector2(-30, 1526)
 
 [node name="StaticBody2D7" parent="terrain" unique_id=1624918828 instance=ExtResource("7_xb34a")]
@@ -217,6 +221,9 @@ position = Vector2(2595, 2202)
 [node name="AnimationPlayer" type="AnimationPlayer" parent="terrain" unique_id=1900383086]
 libraries/ = SubResource("AnimationLibrary_6fig5")
 autoplay = &"move"
+
+[node name="portal" parent="terrain" unique_id=780019999 instance=ExtResource("12_k6ibc")]
+position = Vector2(3615, 1936)
 
 [node name="invert" parent="." unique_id=67366047 instance=ExtResource("9_ugyvg")]
 position = Vector2(-681, 1766)

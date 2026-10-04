@@ -5,7 +5,7 @@ var instances = {
 	"pause_m": null,
 	"c_level": null
 }
-
+var level
 func _ready() -> void:
 	process_mode = Node.PROCESS_MODE_ALWAYS
 	var menu = load("uid://dfs6b64cfoybe")
@@ -29,6 +29,7 @@ func start_game():
 		instances.c_level = main.instantiate()
 		add_child(instances.c_level)
 		move_child(instances.c_level, 0)
+		print(instances.c_level)
 
 func quit():
 	get_tree().quit()
@@ -50,9 +51,11 @@ func pause(thing: bool):
 
 func load_level(scene: int):
 	if scene == 2:
-		var level = load("uid://de2ojt5cxd0hp")
-		if level:
-			instances.c_level.queue_free()
-			instances.c_level = null
-			instances.c_level = level.instantiate()
-			add_child(instances.c_level)
+		level = load("uid://de2ojt5cxd0hp")
+	elif scene == 3:
+		level = load("uid://dalljrllho4cs")
+	if level:
+		instances.c_level.queue_free()
+		instances.c_level = null
+		instances.c_level = level.instantiate()
+		add_child(instances.c_level)
