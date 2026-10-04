@@ -1,0 +1,107 @@
+[gd_scene format=3 uid="uid://dalljrllho4cs"]
+
+[ext_resource type="Texture2D" uid="uid://dqhf6qw15neb" path="res://assets/terrain_w.png" id="1_nfmnx"]
+[ext_resource type="Texture2D" uid="uid://d3rdkg7dkxrcp" path="res://scenes/terrain/rain.tres" id="2_qa3ag"]
+[ext_resource type="PackedScene" uid="uid://b421st8117udf" path="res://scenes/player_2.tscn" id="3_5amew"]
+[ext_resource type="Texture2D" uid="uid://c081371lukm1a" path="res://assets/terrain.png" id="4_t1k4y"]
+[ext_resource type="Theme" uid="uid://b4p5w0o62fmet" path="res://main_theme.tres" id="5_qa3ag"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_21exc"]
+distance = -103.0
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_21exc"]
+polygon = PackedVector2Array(-5094, 97, 4556, 96, 4555, 126, -5089, 206)
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_3v48n"]
+particle_flag_disable_z = true
+emission_shape_scale = Vector3(2, 1, 1)
+emission_shape = 3
+emission_box_extents = Vector3(100, 0, 0)
+direction = Vector3(0, 1, 0)
+spread = 0.0
+initial_velocity_min = 300.0
+initial_velocity_max = 500.0
+gravity = Vector3(50, 800, 0)
+color = Color(1, 1, 1, 0.7529412)
+collision_mode = 2
+sub_emitter_mode = 3
+sub_emitter_amount_at_collision = 10
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_75aq2"]
+atlas = ExtResource("4_t1k4y")
+region = Rect2(603.006, 374.84927, 2.8966064, 3.125824)
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_o5uye"]
+particle_flag_disable_z = true
+angle_min = 90.000015
+angle_max = 180.00002
+direction = Vector3(0, -1, 0)
+spread = 60.0
+initial_velocity_min = 100.0
+initial_velocity_max = 100.0
+gravity = Vector3(0, 0, 0)
+
+[node name="Node2D" type="Node2D" unique_id=1473068648]
+
+[node name="Parallax2D" type="Parallax2D" parent="." unique_id=809349747]
+
+[node name="Sprite2D" type="Sprite2D" parent="Parallax2D" unique_id=701690262]
+position = Vector2(-4.000001, -4.000001)
+scale = Vector2(17.099014, 46.80387)
+texture = ExtResource("1_nfmnx")
+region_enabled = true
+region_rect = Rect2(401.0051, 351.10455, 945.8091, 295.74884)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=68975871]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1743720917]
+position = Vector2(0, -2)
+shape = SubResource("WorldBoundaryShape2D_21exc")
+
+[node name="ground" type="Sprite2D" parent="StaticBody2D" unique_id=2024745206]
+position = Vector2(47.000004, 1103)
+rotation = 1.5707964
+scale = Vector2(1000, 4307.692)
+texture = ExtResource("2_qa3ag")
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="StaticBody2D" unique_id=362292713]
+occluder = SubResource("OccluderPolygon2D_21exc")
+
+[node name="player" parent="." unique_id=1473186542 instance=ExtResource("3_5amew")]
+scale = Vector2(0.7, 0.7)
+
+[node name="rain" type="GPUParticles2D" parent="player" unique_id=535577036]
+position = Vector2(14.285713, -1388.5715)
+scale = Vector2(9.999999, 9.999999)
+amount = 150
+sub_emitter = NodePath("../../splash")
+texture = ExtResource("2_qa3ag")
+lifetime = 2.0
+speed_scale = 0.7
+fixed_fps = 0
+draw_order = 0
+process_material = SubResource("ParticleProcessMaterial_3v48n")
+
+[node name="Camera2D" type="Camera2D" parent="player" unique_id=462858777]
+position = Vector2(1, -1)
+zoom = Vector2(0.5, 0.5)
+position_smoothing_enabled = true
+position_smoothing_speed = 15.0
+
+[node name="splash" type="GPUParticles2D" parent="." unique_id=1119718655]
+position = Vector2(9.999999, -972)
+scale = Vector2(0.9999998, 0.9999998)
+amount = 4
+sub_emitter = NodePath(".")
+texture = SubResource("AtlasTexture_75aq2")
+lifetime = 0.4
+process_material = SubResource("ParticleProcessMaterial_o5uye")
+
+[node name="Label" type="Label" parent="." unique_id=2038882045]
+offset_left = -728.0
+offset_top = -491.0
+offset_right = 4804.0
+offset_bottom = 48.0
+theme = ExtResource("5_qa3ag")
+theme_override_font_sizes/font_size = 100
+text = "Congratulations, you finished the demo!"
