@@ -5,7 +5,7 @@ Contrast is a monochrome metroidvania involving light, shadows, and getting lost
 
 <img width="1712" height="962" alt="Screencast from 2026-09-25 15-48-41" src="https://github.com/user-attachments/assets/c6929707-2de3-4966-84b2-3bacb39e3776" />
 
-### [Download Game](https://contrast.a-fun-gi.com)
+### [Download Game on Itch!!!](https://monochromoplasma.itch.io/contrast-demo)
 
 ## About the Game
 
