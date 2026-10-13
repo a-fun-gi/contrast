@@ -5,6 +5,12 @@
 [ext_resource type="Script" uid="uid://b01uk2eh2m5di" path="res://scenes/ui/main_menu.gd" id="2_m1kxf"]
 [ext_resource type="Shader" uid="uid://bvx4c7snj8hk" path="res://shaders/invert.gdshader" id="4_m1kxf"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_470mv"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_left = 5
+border_width_right = 5
+border_color = Color(0, 0, 0, 1)
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fe2o3"]
 content_margin_left = 4.0
 content_margin_top = 4.0
@@ -35,6 +41,10 @@ Button/colors/font_color = Color(0, 0, 0, 1)
 Button/colors/font_hover_color = Color(0.5971761, 0.59717613, 0.597176, 1)
 Button/constants/outline_size = 2
 Button/font_sizes/font_size = 40
+Button/styles/focus = SubResource("StyleBoxFlat_470mv")
+CheckButton/colors/button_checked_color = Color(1, 1, 1, 1)
+CheckButton/colors/button_unchecked_color = Color(1, 1, 1, 1)
+CheckButton/styles/focus = null
 Label/colors/font_color = Color(0, 0, 0, 1)
 Label/colors/font_outline_color = Color(0, 0, 0, 1)
 Label/colors/font_shadow_color = Color(0, 0, 0, 0)
@@ -91,7 +101,7 @@ layout_mode = 2
 text = "Play"
 flat = true
 
-[node name="Button3" type="LinkButton" parent="CenterContainer/VBoxContainer" unique_id=1189733034]
+[node name="Button3" type="Button" parent="CenterContainer/VBoxContainer" unique_id=1404393089]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
@@ -100,8 +110,7 @@ theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 2
 theme_override_font_sizes/font_size = 40
 text = "Source"
-underline = 1
-uri = "https://github.com/a-fun-gi/contrast"
+flat = true
 
 [node name="Button2" type="Button" parent="CenterContainer/VBoxContainer" unique_id=1243353065]
 layout_mode = 2
@@ -134,4 +143,5 @@ scale = Vector2(0.9999981, 1)
 mouse_filter = 2
 
 [connection signal="pressed" from="CenterContainer/VBoxContainer/Button" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="CenterContainer/VBoxContainer/Button3" to="." method="_on_source_button_pressed"]
 [connection signal="pressed" from="CenterContainer/VBoxContainer/Button2" to="." method="_on_quit_button_pressed"]
