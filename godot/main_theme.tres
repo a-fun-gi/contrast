@@ -1,6 +1,7 @@
 [gd_resource type="Theme" format=3 uid="uid://b4p5w0o62fmet"]
 
 [ext_resource type="FontFile" uid="uid://dimexahc4xkr8" path="res://assets/fonts/CoveredByYourGrace-Regular.ttf" id="1_470mv"]
+[ext_resource type="StyleBox" uid="uid://coyjjq37rsyqs" path="res://resources/focus.tres" id="1_a2l2q"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fe2o3"]
 content_margin_left = 4.0
@@ -25,7 +26,7 @@ expand_margin_bottom = 2.0
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1g8jr"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_21exc"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_58jnp"]
 bg_color = Color(1, 1, 1, 1)
 border_width_left = 5
 border_width_top = 5
@@ -47,6 +48,10 @@ Button/colors/font_color = Color(0, 0, 0, 1)
 Button/colors/font_hover_color = Color(0.5971761, 0.59717613, 0.597176, 1)
 Button/constants/outline_size = 2
 Button/font_sizes/font_size = 40
+Button/styles/focus = ExtResource("1_a2l2q")
+CheckButton/colors/button_checked_color = Color(1, 1, 1, 1)
+CheckButton/colors/button_unchecked_color = Color(1, 1, 1, 1)
+CheckButton/styles/focus = ExtResource("1_a2l2q")
 Label/colors/font_color = Color(0, 0, 0, 1)
 Label/colors/font_outline_color = Color(0, 0, 0, 1)
 Label/colors/font_shadow_color = Color(0, 0, 0, 0)
@@ -57,6 +62,6 @@ Label/constants/shadow_offset_y = 1
 Label/constants/shadow_outline_size = 1
 Label/styles/focus = SubResource("StyleBoxFlat_fe2o3")
 Label/styles/normal = SubResource("StyleBoxEmpty_1g8jr")
-PanelContainer/styles/panel = SubResource("StyleBoxFlat_21exc")
+PanelContainer/styles/panel = SubResource("StyleBoxFlat_58jnp")
 ProgressBar/styles/background = SubResource("StyleBoxFlat_a2l2q")
 ProgressBar/styles/fill = SubResource("StyleBoxFlat_0omi4")
