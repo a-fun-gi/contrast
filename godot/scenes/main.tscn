@@ -1,6 +1,5 @@
 [gd_scene format=3 uid="uid://dcfub1tbypo17"]
 
-[ext_resource type="Script" uid="uid://xja4q0shbta6" path="res://scenes/maingameloopmanager.gd" id="1_choun"]
 [ext_resource type="PackedScene" uid="uid://b421st8117udf" path="res://scenes/player_2.tscn" id="1_o5qli"]
 [ext_resource type="Texture2D" uid="uid://dqhf6qw15neb" path="res://assets/terrain_w.png" id="1_tipki"]
 [ext_resource type="PackedScene" uid="uid://g2uu3ncq40g4" path="res://scenes/terrain/large_rect.tscn" id="2_0wfyh"]
@@ -327,10 +326,6 @@ scale_max = 0.7
 [node name="main" type="Node2D" unique_id=1593916627]
 process_mode = 1
 
-[node name="LoopManager" type="Node" parent="." unique_id=312628614]
-unique_name_in_owner = true
-script = ExtResource("1_choun")
-
 [node name="Parallax2D" type="Parallax2D" parent="." unique_id=711210797]
 scroll_scale = Vector2(0, 0)
 
@@ -342,6 +337,7 @@ region_enabled = true
 region_rect = Rect2(401.0051, 351.10455, 945.8091, 295.74884)
 
 [node name="player" parent="." unique_id=1473186542 instance=ExtResource("1_o5qli")]
+unique_name_in_owner = true
 scale = Vector2(0.7, 0.7)
 
 [node name="Camera2D" type="Camera2D" parent="player" unique_id=969756227]

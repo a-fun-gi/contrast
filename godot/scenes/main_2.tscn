@@ -1,6 +1,5 @@
 [gd_scene format=3 uid="uid://de2ojt5cxd0hp"]
 
-[ext_resource type="Script" uid="uid://xja4q0shbta6" path="res://scenes/maingameloopmanager.gd" id="1_l0l3m"]
 [ext_resource type="Texture2D" uid="uid://dqhf6qw15neb" path="res://assets/terrain_w.png" id="2_owpos"]
 [ext_resource type="PackedScene" uid="uid://b421st8117udf" path="res://scenes/player_2.tscn" id="3_f241j"]
 [ext_resource type="Texture2D" uid="uid://d3rdkg7dkxrcp" path="res://scenes/terrain/rain.tres" id="4_1k1ng"]
@@ -132,10 +131,6 @@ _data = {
 
 [node name="main2" type="Node2D" unique_id=312754921]
 
-[node name="LoopManager" type="Node" parent="." unique_id=1815093461]
-unique_name_in_owner = true
-script = ExtResource("1_l0l3m")
-
 [node name="Parallax2D" type="Parallax2D" parent="." unique_id=1162857154]
 scroll_offset = Vector2(4, 4)
 
@@ -147,6 +142,7 @@ region_enabled = true
 region_rect = Rect2(401.0051, 351.10455, 945.8091, 295.74884)
 
 [node name="player" parent="." unique_id=1473186542 instance=ExtResource("3_f241j")]
+unique_name_in_owner = true
 scale = Vector2(0.7, 0.7)
 
 [node name="rain" type="GPUParticles2D" parent="player" unique_id=1895587832]

@@ -59,3 +59,15 @@ func load_level(scene: int):
 		instances.c_level = null
 		instances.c_level = level.instantiate()
 		add_child(instances.c_level)
+
+func change_health(addend):
+	data.health += addend
+	print(data.health)
+	if data.health < 0:
+		player.die()
+	return data.health
+
+func _input(event: InputEvent) -> void:
+	if event.is_action_pressed("pause"):
+		pause(true)
+
