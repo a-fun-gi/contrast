@@ -68,6 +68,7 @@ texture = ExtResource("2_qa3ag")
 occluder = SubResource("OccluderPolygon2D_21exc")
 
 [node name="player" parent="." unique_id=1473186542 instance=ExtResource("3_5amew")]
+unique_name_in_owner = true
 scale = Vector2(0.7, 0.7)
 
 [node name="rain" type="GPUParticles2D" parent="player" unique_id=535577036]
