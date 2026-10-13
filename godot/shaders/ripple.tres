@@ -1,0 +1,9 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://bmp1camg161m8"]
+
+[ext_resource type="Shader" uid="uid://xoyahlndr113" path="res://shaders/ripple.gdshader" id="1_dh424"]
+
+[resource]
+shader = ExtResource("1_dh424")
+shader_parameter/wave_count = 20.0
+shader_parameter/speed = 3.0
+shader_parameter/height = 0.003
