@@ -1,0 +1,79 @@
+[gd_scene format=3 uid="uid://dgosqhhaqsplc"]
+
+[ext_resource type="Theme" uid="uid://b4p5w0o62fmet" path="res://main_theme.tres" id="1_ktt30"]
+[ext_resource type="Script" uid="uid://dkfed8awv566n" path="res://scenes/ui/option_menu.gd" id="2_5jsow"]
+
+[node name="Control" type="Control" unique_id=117423748]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_ktt30")
+script = ExtResource("2_5jsow")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1663058979]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="." unique_id=170466792]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -67.5
+offset_top = -25.0
+offset_right = 67.5
+offset_bottom = 25.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer" unique_id=178815835]
+layout_mode = 2
+
+[node name="Label2" type="Label" parent="CenterContainer/VBoxContainer" unique_id=103164668]
+layout_mode = 2
+text = "Ripple shader intensity"
+
+[node name="HSlider2" type="HSlider" parent="CenterContainer/VBoxContainer" unique_id=290495863]
+layout_mode = 2
+max_value = 20.0
+value = 20.0
+
+[node name="Label" type="Label" parent="CenterContainer/VBoxContainer" unique_id=1796969802]
+layout_mode = 2
+text = "Volume"
+horizontal_alignment = 1
+
+[node name="HSlider" type="HSlider" parent="CenterContainer/VBoxContainer" unique_id=1075526667]
+layout_mode = 2
+max_value = 1.0
+step = 0.1
+value = 0.5
+
+[node name="exit" type="Button" parent="." unique_id=2123778933]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -8.0
+offset_top = -8.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_font_sizes/font_size = 30
+text = "Save & Exit"
+flat = true
+
+[connection signal="value_changed" from="CenterContainer/VBoxContainer/HSlider2" to="." method="_on_shader_slider_value_changed"]
+[connection signal="value_changed" from="CenterContainer/VBoxContainer/HSlider" to="." method="_on_h_slider_value_changed"]
+[connection signal="pressed" from="exit" to="." method="_on_exit_pressed"]

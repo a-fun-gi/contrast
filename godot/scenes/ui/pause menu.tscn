@@ -4,10 +4,10 @@
 [ext_resource type="Theme" uid="uid://b4p5w0o62fmet" path="res://main_theme.tres" id="1_ty7to"]
 
 [node name="CanvasLayer" type="CanvasLayer" unique_id=308083332]
+process_mode = 2
 script = ExtResource("1_pf5s4")
 
 [node name="menu" type="Control" parent="." unique_id=753297295]
-process_mode = 2
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -53,11 +53,19 @@ theme_override_font_sizes/font_size = 30
 text = "back"
 flat = true
 
+[node name="Button3" type="Button" parent="menu/CenterContainer/PanelContainer/VBoxContainer" unique_id=2045758111]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "Options"
+flat = true
+
 [node name="Button" type="Button" parent="menu/CenterContainer/PanelContainer/VBoxContainer" unique_id=1033256554]
 layout_mode = 2
 theme_override_font_sizes/font_size = 30
 text = "quit"
 flat = true
 
+[connection signal="visibility_changed" from="." to="." method="_on_visibility_changed"]
 [connection signal="pressed" from="menu/CenterContainer/PanelContainer/VBoxContainer/Button2" to="." method="_on_back_button_pressed"]
+[connection signal="pressed" from="menu/CenterContainer/PanelContainer/VBoxContainer/Button3" to="." method="_on_options_pressed"]
 [connection signal="pressed" from="menu/CenterContainer/PanelContainer/VBoxContainer/Button" to="." method="_on_quit_button_pressed"]
