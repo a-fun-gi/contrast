@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://bte6c8qabhdk3" path="res://scenes/terrain/skinny_rect.tscn" id="5_tbgi4"]
 [ext_resource type="PackedScene" uid="uid://tq0qcg1kgyak" path="res://scenes/terrain/circle.tscn" id="6_tefeu"]
 [ext_resource type="PackedScene" uid="uid://dwhadwu4etnhw" path="res://scenes/dropzone.tscn" id="10_eb6dy"]
+[ext_resource type="PackedScene" uid="uid://ci712kmy6xflj" path="res://scenes/ui/infothing.tscn" id="10_muem4"]
 [ext_resource type="PackedScene" uid="uid://bew2xjf7mefcu" path="res://scenes/mmovingsquareblack.tscn" id="11_trceg"]
 [ext_resource type="PackedScene" uid="uid://bj7rqb8uwiwmo" path="res://scenes/terrain/invert.tscn" id="13_trceg"]
 [ext_resource type="PackedScene" uid="uid://3omylfemrbt7" path="res://scenes/terrain/ripple-zone.tscn" id="14_a8y0u"]
@@ -330,92 +331,107 @@ process_mode = 1
 scroll_scale = Vector2(0, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="Parallax2D" unique_id=1738743405]
-position = Vector2(2.999878, 3.0000076)
+position = Vector2(9.000001, 107.000015)
 scale = Vector2(17.099014, 46.80387)
 texture = ExtResource("1_tipki")
 region_enabled = true
 region_rect = Rect2(401.0051, 351.10455, 945.8091, 295.74884)
 
-[node name="player" parent="." unique_id=1473186542 instance=ExtResource("1_o5qli")]
-unique_name_in_owner = true
-scale = Vector2(0.7, 0.7)
-
-[node name="Camera2D" type="Camera2D" parent="player" unique_id=969756227]
-position = Vector2(1, -1)
-zoom = Vector2(0.5, 0.5)
-position_smoothing_enabled = true
-position_smoothing_speed = 15.0
-
 [node name="terrain" type="Node2D" parent="." unique_id=906218129]
 
+[node name="StaticBody2D11" parent="terrain" unique_id=4028278 instance=ExtResource("4_tbgi4")]
+position = Vector2(842, 236)
+
+[node name="StaticBody2D12" parent="terrain" unique_id=911431278 instance=ExtResource("4_tbgi4")]
+position = Vector2(992, 98)
+
+[node name="StaticBody2D13" parent="terrain" unique_id=2077566398 instance=ExtResource("4_tbgi4")]
+position = Vector2(1122, -27)
+
+[node name="StaticBody2D14" parent="terrain" unique_id=864551730 instance=ExtResource("5_tbgi4")]
+position = Vector2(1681.0001, -111.00006)
+rotation = 0.89446354
+
+[node name="StaticBody2D15" parent="terrain" unique_id=1093654964 instance=ExtResource("5_tbgi4")]
+position = Vector2(2207.0002, -103.00012)
+rotation = 0.89446354
+
 [node name="StaticBody2D10" parent="terrain" unique_id=1943535163 instance=ExtResource("5_tbgi4")]
-position = Vector2(5699.999, 886.9999)
+position = Vector2(7791.999, 636.28406)
 rotation = -1.5712355
 scale = Vector2(0.99999994, 0.99999994)
 
 [node name="AnimatableBody2D2" parent="terrain" unique_id=2084512860 instance=ExtResource("2_jyhfs")]
-position = Vector2(3025, 439)
+position = Vector2(5117, 188.28418)
 
 [node name="StaticBody2D" parent="terrain" unique_id=1598109844 instance=ExtResource("2_0wfyh")]
 position = Vector2(-19, 251)
 
-[node name="StaticBody2D2" parent="terrain" unique_id=4028278 instance=ExtResource("4_tbgi4")]
-position = Vector2(707, 119)
+[node name="StaticBody2D2" parent="terrain" unique_id=1651238068 instance=ExtResource("4_tbgi4")]
+position = Vector2(2799, -131.71582)
 
 [node name="StaticBody2D3" parent="terrain" unique_id=2094124161 instance=ExtResource("4_tbgi4")]
-position = Vector2(1002, 56)
+position = Vector2(3094, -194.71582)
 
 [node name="AnimatableBody2D" parent="terrain" unique_id=1420128002 instance=ExtResource("2_jyhfs")]
-position = Vector2(1416, -150.99994)
+position = Vector2(3508.0002, -401.7158)
 scale = Vector2(1.05, 1.05)
 
-[node name="StaticBody2D4" parent="terrain" unique_id=864551730 instance=ExtResource("5_tbgi4")]
-position = Vector2(1834, 257)
+[node name="StaticBody2D4" parent="terrain" unique_id=1372718614 instance=ExtResource("5_tbgi4")]
+position = Vector2(3926, 6.2841797)
 
 [node name="StaticBody2D5" parent="terrain" unique_id=1624918828 instance=ExtResource("6_tefeu")]
-position = Vector2(2310, 38)
+position = Vector2(4402, -212.71582)
 
 [node name="StaticBody2D6" parent="terrain" unique_id=1310697614 instance=ExtResource("4_tbgi4")]
-position = Vector2(2105, 900)
+position = Vector2(4197, 649.2842)
 
 [node name="StaticBody2D7" parent="terrain" unique_id=1462404530 instance=ExtResource("4_tbgi4")]
-position = Vector2(2287, 815)
+position = Vector2(4379, 564.2842)
 
 [node name="StaticBody2D8" parent="terrain" unique_id=454439681 instance=ExtResource("4_tbgi4")]
-position = Vector2(2444, 664)
+position = Vector2(4536, 413.28418)
 
 [node name="AnimatableBody2D3" parent="terrain" unique_id=1956926882 instance=ExtResource("2_jyhfs")]
-position = Vector2(3567.9998, 233.99991)
+position = Vector2(5660, -16.715942)
 rotation = -0.3223451
 
 [node name="StaticBody2D9" parent="terrain" unique_id=1721441397 instance=ExtResource("5_tbgi4")]
-position = Vector2(3469, 889)
+position = Vector2(5561, 638.2842)
 rotation = 1.5810928
 
 [node name="dropzone" parent="terrain" unique_id=1037339053 instance=ExtResource("10_eb6dy")]
-position = Vector2(1092, 1143)
+position = Vector2(3184, 892.2842)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="terrain" unique_id=902277008]
 libraries/ = SubResource("AnimationLibrary_a8y0u")
 autoplay = &"move"
 
 [node name="AnimatableBody2D4" parent="terrain" unique_id=1546064947 instance=ExtResource("11_trceg")]
-position = Vector2(4189, 894)
+position = Vector2(6281, 643.2842)
 
 [node name="AnimatableBody2D5" parent="terrain" unique_id=203271805 instance=ExtResource("11_trceg")]
-position = Vector2(4662, 894)
+position = Vector2(6754, 643.2842)
 
 [node name="AnimatableBody2D6" parent="terrain" unique_id=1566307171 instance=ExtResource("11_trceg")]
-position = Vector2(5144, 894)
+position = Vector2(7236, 643.2842)
 
 [node name="AnimationPlayer2" type="AnimationPlayer" parent="terrain" unique_id=1822380117]
 libraries/ = SubResource("AnimationLibrary_jbj1t")
 autoplay = &"move"
 
+[node name="info thing" parent="terrain" unique_id=1590872820 instance=ExtResource("10_muem4")]
+position = Vector2(0, 36)
+text = "use ◄ and ► to move and space to jump"
+
+[node name="info thing2" parent="terrain" unique_id=146290546 instance=ExtResource("10_muem4")]
+position = Vector2(2790, -300)
+text = "in an unstable area, you must balance between light and dark ►"
+
 [node name="hud" parent="." unique_id=149057146 instance=ExtResource("2_ya4ey")]
 
 [node name="walls" parent="." unique_id=374492164 instance=ExtResource("15_jkv2x")]
-position = Vector2(1561, 222)
+position = Vector2(3653, -28.71582)
 scale = Vector2(13.319995, 5.64)
 
 [node name="GPUParticles2D" parent="walls" index="0" unique_id=1487848240]
@@ -427,7 +443,7 @@ lifetime = 3.68
 process_material = SubResource("ParticleProcessMaterial_muem4")
 
 [node name="walls2" parent="." unique_id=1789562853 instance=ExtResource("15_jkv2x")]
-position = Vector2(3985, 247)
+position = Vector2(6077, -3.7158203)
 scale = Vector2(13.319995, 5.64)
 
 [node name="GPUParticles2D" parent="walls2" index="0" unique_id=1487848240]
@@ -438,7 +454,18 @@ process_material = SubResource("ParticleProcessMaterial_jbj1t")
 lifetime = 3.68
 process_material = SubResource("ParticleProcessMaterial_muem4")
 
+[node name="player" parent="." unique_id=1473186542 instance=ExtResource("1_o5qli")]
+unique_name_in_owner = true
+scale = Vector2(0.7, 0.7)
+
+[node name="Camera2D" type="Camera2D" parent="player" unique_id=969756227]
+position = Vector2(1, -1)
+zoom = Vector2(0.5, 0.5)
+position_smoothing_enabled = true
+position_smoothing_speed = 15.0
+
 [node name="inverters" type="Node2D" parent="." unique_id=1784691390]
+position = Vector2(2092, -250.71582)
 
 [node name="invert" parent="inverters" unique_id=67366047 instance=ExtResource("13_trceg")]
 position = Vector2(52.00003, -519)
@@ -451,20 +478,20 @@ rotation = -0.2718751
 scale = Vector2(9.901638, 9.212249)
 
 [node name="BackBufferCopy" type="BackBufferCopy" parent="." unique_id=1361667594]
-position = Vector2(2569, 227)
+position = Vector2(4661, -23.715805)
 rotation = -0.2718751
 scale = Vector2(9.90164, 9.21225)
 copy_mode = 2
 
 [node name="ripple" parent="." unique_id=1118354579 instance=ExtResource("14_a8y0u")]
-position = Vector2(2033.0002, 287)
+position = Vector2(4125, 36.28415)
 scale = Vector2(2.599998, 3.04)
 
 [node name="pause_menu" parent="." unique_id=753297295 instance=ExtResource("16_jbj1t")]
 visible = false
 
 [node name="portal" parent="." unique_id=780019999 instance=ExtResource("17_muem4")]
-position = Vector2(5862, 710)
+position = Vector2(7954, 459.28418)
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1364586708]
 stream = ExtResource("17_dp3eg")

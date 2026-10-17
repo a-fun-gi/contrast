@@ -1,0 +1,37 @@
+[gd_scene format=3 uid="uid://ci712kmy6xflj"]
+
+[ext_resource type="Texture2D" uid="uid://d3rdkg7dkxrcp" path="res://scenes/terrain/rain.tres" id="1_l2kfe"]
+[ext_resource type="Script" uid="uid://deyjtnh5y4u06" path="res://scenes/ui/infothing.gd" id="1_utkbk"]
+[ext_resource type="Theme" uid="uid://b4p5w0o62fmet" path="res://main_theme.tres" id="2_utkbk"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_21exc"]
+size = Vector2(223, 113)
+
+[node name="info thing" type="Area2D" unique_id=1590872820]
+script = ExtResource("1_utkbk")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=411465952]
+position = Vector2(5.5, -60.5)
+shape = SubResource("RectangleShape2D_21exc")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1887775784]
+position = Vector2(-1.0000024, -60.05371)
+rotation = 0.7853982
+scale = Vector2(35.417862, 34.00365)
+texture = ExtResource("1_l2kfe")
+region_enabled = true
+region_rect = Rect2(0, 0, 2, 2.2154922)
+
+[node name="Label" type="Label" parent="." unique_id=508559435]
+visible = false
+offset_left = -747.0
+offset_top = -575.0
+offset_right = 751.0
+offset_bottom = -467.0
+theme = ExtResource("2_utkbk")
+theme_override_font_sizes/font_size = 80
+text = "blank text ooooh"
+horizontal_alignment = 1
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]
