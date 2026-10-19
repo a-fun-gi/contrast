@@ -228,4 +228,6 @@ scale = Vector2(21.999851, 21.551807)
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=322401663]
 stream = ExtResource("13_ugyvg")
+volume_db = -7.0
 autoplay = true
+bus = &"sfx"
