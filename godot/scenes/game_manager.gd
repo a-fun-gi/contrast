@@ -80,8 +80,6 @@ func load_level(scene: int):
 func change_health(addend):
 	data.health += addend
 	print(data.health)
-	if data.health < 0:
-		player.die()
 	return data.health
 
 func _input(event: InputEvent) -> void:
