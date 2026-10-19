@@ -7,7 +7,7 @@ extends CharacterBody2D
 @export var inverted: bool = false
 @export var unstable: bool = false
 
-const SPEED = 300.0
+const SPEED = 350.0
 const JUMP_VELOCITY = -700.0
 
 var lastpos: Vector2
